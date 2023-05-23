@@ -4,7 +4,7 @@
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Visual Studio Code &#8212; documentação Cluster Cin latest</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
@@ -17,8 +17,7 @@
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/translations.js"></script>
     <link rel="index" title="Índice" href="genindex.html" />
-    <link rel="search" title="Buscar" href="search.html" />
-    <link rel="prev" title="User’s guide" href="Userguide.html" /> 
+    <link rel="search" title="Buscar" href="search.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navegação</h3>
@@ -26,9 +25,6 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="Índice Geral"
              accesskey="I">índice</a></li>
-        <li class="right" >
-          <a href="Userguide.html" title="User’s guide"
-             accesskey="P">anterior</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">documentação Cluster Cin latest</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Visual Studio Code</a></li> 
       </ul>
@@ -86,7 +82,7 @@ that same environment.</p>
 instances may crash with that message because of conflicts in the lock files
 VSCode installs in <code class="docutils literal notranslate"><span class="pre">~/.vscode-server</span></code> (which is shared on all compute nodes).
 To fix this issue, you can change this setting in your <code class="docutils literal notranslate"><span class="pre">settings.json</span></code> file:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;remote.SSH.lockfilesInTmp&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;remote.SSH.lockfilesInTmp&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
 <p>This will store the necessary lockfiles in <code class="docutils literal notranslate"><span class="pre">/tmp</span></code> on the compute nodes (which
@@ -99,7 +95,7 @@ the VSCode debugger to timeout when starting a remote debug process. As a quick
 fix, you can add this to your <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> or <code class="docutils literal notranslate"><span class="pre">~/.profile</span></code> or equivalent
 resource file for your preferred shell, to increase the timeout delay to 500
 seconds:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">DEBUGPY_PROCESS_SPAWN_TIMEOUT</span><span class="o">=</span><span class="m">500</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">DEBUGPY_PROCESS_SPAWN_TIMEOUT</span><span class="o">=</span><span class="m">500</span>
 </pre></div>
 </div>
 </section>
@@ -132,11 +128,6 @@ seconds:</p>
 </ul>
 
   </div>
-  <div>
-    <h4>Tópico anterior</h4>
-    <p class="topless"><a href="Userguide.html"
-                          title="capítulo anterior">User’s guide</a></p>
-  </div>
   <div role="note" aria-label="source link">
     <h3>Essa Página</h3>
     <ul class="this-page-menu">
@@ -164,15 +155,12 @@ seconds:</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="Índice Geral"
              >índice</a></li>
-        <li class="right" >
-          <a href="Userguide.html" title="User’s guide"
-             >anterior</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">documentação Cluster Cin latest</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Visual Studio Code</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2022.
+        &#169; Copyright 2023.
       Criada usando <a href="https://www.sphinx-doc.org/pt_BR/master">Sphinx</a> 5.3.0.
     </div>
   </body>

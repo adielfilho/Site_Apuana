@@ -4,7 +4,7 @@
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Processing data &#8212; documentação Cluster Cin latest</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
@@ -36,12 +36,12 @@
           <div class="body" role="main">
             
   <section id="processing-data">
-<h1>Processing data<a class="headerlink" href="#processing-data" title="Link permanente para este cabeçalho">¶</a></h1>
+<h1>Processing data<a class="headerlink" href="#processing-data" title="Link permanente para este cabeçalho"></a></h1>
 <p>For processing large amounts of data common for deep learning, either
 for dataset preprocessing or training, several techniques exist. Each
 has typical uses and limitations.</p>
 <section id="data-parallelism">
-<h2>Data parallelism<a class="headerlink" href="#data-parallelism" title="Link permanente para este cabeçalho">¶</a></h2>
+<h2>Data parallelism<a class="headerlink" href="#data-parallelism" title="Link permanente para este cabeçalho"></a></h2>
 <p>The first technique is called <strong>data parallelism</strong> (aka task
 parallelism in formal computer science). You simply run lots of
 processes each handling a portion of the data you want to
@@ -63,7 +63,7 @@ at once they may end up not being any faster because they will spend
 their time waiting for data to arrive.</p>
 </section>
 <section id="model-parallelism">
-<h2>Model parallelism<a class="headerlink" href="#model-parallelism" title="Link permanente para este cabeçalho">¶</a></h2>
+<h2>Model parallelism<a class="headerlink" href="#model-parallelism" title="Link permanente para este cabeçalho"></a></h2>
 <p>The second technique is called <strong>model parallelism</strong> (which doesn’t
 have a single equivalent in formal computer science). It is used
 mostly when a single instance of a model will not fit in a computing
@@ -76,7 +76,7 @@ with each other to arrive at a final result.</p>
 powerful models like GPT.</p>
 </section>
 <section id="communication-concerns">
-<h2>Communication concerns<a class="headerlink" href="#communication-concerns" title="Link permanente para este cabeçalho">¶</a></h2>
+<h2>Communication concerns<a class="headerlink" href="#communication-concerns" title="Link permanente para este cabeçalho"></a></h2>
 <p>The main difference of these two approaches is the need for
 communication between the multiple processes. Some common training
 methods, like stochastic gradient descent sit somewhere between the
@@ -99,7 +99,7 @@ support (such as <a class="reference external" href="https://en.wikipedia.org/wi
 <a class="reference external" href="https://en.wikipedia.org/wiki/NVLink">NVLink</a> or others)</p>
 </section>
 <section id="filesystem-concerns">
-<h2>Filesystem concerns<a class="headerlink" href="#filesystem-concerns" title="Link permanente para este cabeçalho">¶</a></h2>
+<h2>Filesystem concerns<a class="headerlink" href="#filesystem-concerns" title="Link permanente para este cabeçalho"></a></h2>
 <p>When working on a cluster, you will generally encounter several
 different filesystems.  Usually there will be names such as ‘home’,
 ‘scratch’, ‘datasets’, ‘projects’, ‘tmp’.</p>
@@ -189,7 +189,7 @@ thesis keep an additional copy of it somewhere else.</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2022.
+        &#169; Copyright 2023.
       Criada usando <a href="https://www.sphinx-doc.org/pt_BR/master">Sphinx</a> 5.3.0.
     </div>
   </body>

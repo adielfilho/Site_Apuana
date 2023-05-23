@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Software no cluster &#8212; documentação Cluster Cin latest</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/groundwork.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegação</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Índice Geral"
+             accesskey="I">índice</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">documentação Cluster Cin latest</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Software no cluster</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="software-no-cluster">
+<h1>Software no cluster<a class="headerlink" href="#software-no-cluster" title="Link permanente para este cabeçalho">¶</a></h1>
+<p>Esta seção tem como objetivo conscientizar sobre os problemas que se pode encontrar
+ao tentar executar um software em diferentes computadores e como isso é tratado em
+clusters de computação típicos.</p>
+<p>Em relação ao desenvolvimento em Python, recomendamos o uso de ambientes virtuais para
+instalar pacotes Python em isolamento.</p>
+<section id="modulos-de-software-do-cluster">
+<h2>Módulos de software do cluster<a class="headerlink" href="#modulos-de-software-do-cluster" title="Link permanente para este cabeçalho">¶</a></h2>
+<p>Os módulos são pequenos arquivos que modificam suas variáveis de ambiente para
+apontar para versões específicas de vários softwares e bibliotecas. Por exemplo,
+um módulo pode fornecer o comando “python” para apontar para o Python 3.7, outro
+pode ativar a versão 11.0 do CUDA, outro pode fornecer o pacote “torch” e assim por diante.</p>
+<p>Para obter mais informações, consulte <span class="xref std std-ref">O comando module</span>.</p>
+</section>
+<section id="conteineres">
+<h2>Contêineres<a class="headerlink" href="#conteineres" title="Link permanente para este cabeçalho">¶</a></h2>
+<p>Os contêineres são uma forma especial de isolamento de software e suas dependências.
+Um contêiner é essencialmente uma máquina virtual leve: ele encapsula um sistema de arquivos
+virtual para uma instalação completa do sistema operacional, bem como uma rede e ambiente de
+execução separados.</p>
+<p>Por exemplo, você pode criar um contêiner Ubuntu no qual instala vários pacotes usando “apt”,
+modifica configurações como faria como usuário root, e assim por diante, mas sem interferir na
+sua instalação principal. Uma vez construído, um contêiner pode ser executado em qualquer sistema
+compatível.</p>
+<p>Para obter mais informações, consulte <span class="xref std std-ref">Usando contêineres</span>.</p>
+</section>
+<section id="ambientes-virtuais-python">
+<h2>Ambientes virtuais Python<a class="headerlink" href="#ambientes-virtuais-python" title="Link permanente para este cabeçalho">¶</a></h2>
+<p>Um ambiente virtual em Python é um ambiente local e isolado no qual você pode instalar
+ou desinstalar pacotes Python sem interferir no ambiente global (ou em outros ambientes virtuais).
+Para usar um ambiente virtual, primeiro você deve ativá-lo.</p>
+<p>Para obter mais informações, consulte <span class="xref std std-ref">Ambientes virtuais</span>.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/cin-logo.png" alt="Logo"/>
+            </a></p>
+  <div>
+    <h3><a href="../index.html">Tabela de Conteúdo</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Software no cluster</a><ul>
+<li><a class="reference internal" href="#modulos-de-software-do-cluster">Módulos de software do cluster</a></li>
+<li><a class="reference internal" href="#conteineres">Contêineres</a></li>
+<li><a class="reference internal" href="#ambientes-virtuais-python">Ambientes virtuais Python</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Essa Página</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/TheoryCluster/Theory_cluster_software_deps.rst.txt"
+            rel="nofollow">Exibir Fonte</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Busca rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ir" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegação</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Índice Geral"
+             >índice</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">documentação Cluster Cin latest</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Software no cluster</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023.
+      Criada usando <a href="https://www.sphinx-doc.org/pt_BR/master">Sphinx</a> 5.3.0.
+    </div>
+  </body>
+</html>

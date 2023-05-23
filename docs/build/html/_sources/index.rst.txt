@@ -1,5 +1,5 @@
 
-Apuana Cluster Documentação
+Documentação do Cluster Apuana  
 ###########################
 
 **Acessando o Cluster**
@@ -12,40 +12,39 @@ Para acessar o cluster é necessário ter um login cin.ufpe.br e ter o acesso ha
    Este projeto está em desenvolvimento ativo.
 
 .. toctree::
-   :caption: Por onde Começar
+   :caption: Visão geral
    :maxdepth: 4
 
    cluster_cin
+
+.. toctree::
+   :caption: Instruções de uso
+   :maxdepth: 4
+
    usage
   
 
 .. toctree::
-   :caption: General Theory
+   :caption: Teoria Geral
    :maxdepth: 2
 
-   Theory_cluster
-
+   TheoryCluster/Theory_cluster
   
 
 .. toctree::
-   :caption: Systems and services
+   :caption: Sistemas e serviços
    :maxdepth: 2
    
    information
   
 
 .. toctree::
-   :caption: How to and Guides
+   :caption: Como fazer e guias
    :maxdepth: 2
 
-   Userguide
+   UserGuide/Userguide
    
- 
-.. toctree::
-   :caption: Extras
-   :maxdepth: 2
 
-   VSCode
 
 
 

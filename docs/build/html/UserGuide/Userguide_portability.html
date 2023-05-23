@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Preocupações e soluções de portabilidade &#8212; documentação Cluster Cin latest</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/groundwork.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegação</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Índice Geral"
+             accesskey="I">índice</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">documentação Cluster Cin latest</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Preocupações e soluções de portabilidade</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="preocupacoes-e-solucoes-de-portabilidade">
+<h1>Preocupações e soluções de portabilidade<a class="headerlink" href="#preocupacoes-e-solucoes-de-portabilidade" title="Link permanente para este cabeçalho">¶</a></h1>
+<p>Ao trabalhar em um projeto de software, é importante estar ciente
+de todo o software e bibliotecas nos quais o projeto depende e
+listá-los explicitamente e sob um sistema de controle de versão
+de tal forma que possam ser facilmente instalados e disponibilizados
+em diferentes sistemas. As vantagens são significativas:</p>
+<ul class="simple">
+<li><p>Facilidade de instalação e execução no cluster</p></li>
+<li><p>Facilidade de colaboração</p></li>
+<li><p>Melhor reprodutibilidade</p></li>
+</ul>
+<p>Para alcançar isso, tente sempre manter em mente os seguintes aspectos:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Versões: Para cada dependência, certifique-se de ter algum registro da versão</dt><dd><p>específica que está usando durante o desenvolvimento. Dessa forma, no futuro, você
+poderá reproduzir o ambiente original que sabe ser compatível. De fato, quanto mais
+tempo passa, mais provável é que novas versões de alguma dependência tenham alterações
+quebradas. O comando pip freeze pode criar tal registro para dependências do Python.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Isolamento: Idealmente, cada um de seus projetos de software deve estar isolado dos outros.</dt><dd><p>O que isso significa é que atualizar o ambiente do projeto A não deve atualizar o ambiente do
+projeto B. Dessa forma, você pode instalar e atualizar software e bibliotecas livremente para
+o primeiro, sem se preocupar em quebrar o segundo (o que você pode não perceber até semanas
+depois, na próxima vez em que trabalhar no projeto B!) O isolamento pode ser alcançado usando
+<span class="xref std std-ref">Python Virtual environments</span> and <span class="xref std std-ref">containers</span>.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<section id="gerenciando-seus-ambientes">
+<h2>Gerenciando seus ambientes<a class="headerlink" href="#gerenciando-seus-ambientes" title="Link permanente para este cabeçalho">¶</a></h2>
+</section>
+<section id="ambientes-virtuais">
+<span id="python"></span><h2>Ambientes virtuais<a class="headerlink" href="#ambientes-virtuais" title="Link permanente para este cabeçalho">¶</a></h2>
+<p>Um ambiente virtual em Python é um ambiente local e isolado no qual você pode instalar
+ou desinstalar pacotes do Python sem interferir no ambiente global (ou em outros ambientes virtuais).
+Ele geralmente fica em um diretório (a localização varia dependendo se você usa venv, conda ou poetry).
+Para usar um ambiente virtual, você precisa ativá-lo. Ativar um ambiente define essencialmente variáveis
+de ambiente em seu shell para que:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span></code> aponta para a versão correta do Python para aquele ambiente (diferentes ambientes virtuais podem usar</p></li>
+</ul>
+<blockquote>
+<div><p>diferentes versões do Python!)</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span></code> procura pacotes no ambiente virtual</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> instala pacotes no ambiente virtual</p></li>
+<li><p>Quaisquer comandos de shell instalados via <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> estão disponíveis</p></li>
+</ul>
+<p>Para executar experimentos dentro de um ambiente virtual, você pode simplesmente ativá-lo no script fornecido para <code class="docutils literal notranslate"><span class="pre">sbatch</span></code>.</p>
+<section id="pip-virtualenv">
+<h3>Pip/Virtualenv<a class="headerlink" href="#pip-virtualenv" title="Link permanente para este cabeçalho">¶</a></h3>
+<p>O Pip é o gerenciador de pacotes preferido para Python e cada cluster fornece
+diversas versões do Python por meio do módulo associado, que vem com o pip.
+Para instalar novos pacotes, você primeiro precisará criar um espaço pessoal
+para que eles possam ser armazenados. A solução preferida (assim como é nos
+clusters da Digital Research Alliance do Canadá) é usar ambientes virtuais.</p>
+<blockquote>
+<div><p><a class="reference external" href="https://virtualenv.pypa.io/en/stable/">https://virtualenv.pypa.io/en/stable/</a>.</p>
+</div></blockquote>
+<p>Primeiro, carregue o módulo Python que você deseja usar:
+.. code-block:: console</p>
+<blockquote>
+<div><p>module load python/3.8</p>
+</div></blockquote>
+<p>Então, crie um ambiente virtual no seu diretório <code class="docutils literal notranslate"><span class="pre">home</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python -m venv $HOME/&lt;env&gt;</span>
+</pre></div>
+</div>
+<p>onde <code class="docutils literal notranslate"><span class="pre">&lt;env&gt;</span></code> é o nome do seu ambiente. Finalmente, ative o ambiente:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">source $HOME/&lt;env&gt;/bin/activate</span>
+</pre></div>
+</div>
+<p>Agora você pode instalar qualquer pacote Python que desejar usando o comando <code class="docutils literal notranslate"><span class="pre">pip</span></code>, por exemplo:
+<a class="reference external" href="https://pytorch.org/get-started/locally">pytorch</a>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip install torch torchvision</span>
+</pre></div>
+</div>
+<p>Or <a class="reference external" href="https://www.tensorflow.org/install/gpu">Tensorflow</a>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip install tensorflow-gpu</span>
+</pre></div>
+</div>
+</section>
+<section id="conda">
+<h3>Conda<a class="headerlink" href="#conda" title="Link permanente para este cabeçalho">¶</a></h3>
+<p>Outra solução para Python é usar o miniconda.
+<a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">https://docs.conda.io/en/latest/miniconda.html</a> ou anaconda
+<a class="reference external" href="https://docs.anaconda.com">https://docs.anaconda.com</a></p>
+</section>
+</section>
+<section id="usando-modulos">
+<h2>Usando módulos<a class="headerlink" href="#usando-modulos" title="Link permanente para este cabeçalho">¶</a></h2>
+<p>Muito software, como Python e Conda, já está compilado e disponível no cluster por
+meio do comando <code class="docutils literal notranslate"><span class="pre">module</span></code> e seus subcomandos. Em particular, se você deseja usar
+o <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.7</span></code>, basta fazer:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">module load python/3.7</span>
+</pre></div>
+</div>
+</section>
+<section id="no-uso-de-conteineres">
+<h2>No uso de contêineres<a class="headerlink" href="#no-uso-de-conteineres" title="Link permanente para este cabeçalho">¶</a></h2>
+<p>Outra opção para criar código portátil é: <a class="reference internal" href="Userguide_singularity_on_clusters.html#using-containers"><span class="std std-ref">Usando Conteiners no cluster</span></a>.</p>
+<dl class="simple">
+<dt>Containers são uma abordagem popular para implantar aplicativos, empacotando juntos muitas das dependências necessárias.</dt><dd><p>A ferramenta mais popular para isso é o <a class="reference external" href="https://www.docker.com/">Docker</a>.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/cin-logo.png" alt="Logo"/>
+            </a></p>
+  <div>
+    <h3><a href="../index.html">Tabela de Conteúdo</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Preocupações e soluções de portabilidade</a><ul>
+<li><a class="reference internal" href="#gerenciando-seus-ambientes">Gerenciando seus ambientes</a></li>
+<li><a class="reference internal" href="#ambientes-virtuais">Ambientes virtuais</a><ul>
+<li><a class="reference internal" href="#pip-virtualenv">Pip/Virtualenv</a></li>
+<li><a class="reference internal" href="#conda">Conda</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#usando-modulos">Usando módulos</a></li>
+<li><a class="reference internal" href="#no-uso-de-conteineres">No uso de contêineres</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Essa Página</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/UserGuide/Userguide_portability.rst.txt"
+            rel="nofollow">Exibir Fonte</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Busca rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ir" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegação</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Índice Geral"
+             >índice</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">documentação Cluster Cin latest</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Preocupações e soluções de portabilidade</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023.
+      Criada usando <a href="https://www.sphinx-doc.org/pt_BR/master">Sphinx</a> 5.3.0.
+    </div>
+  </body>
+</html>

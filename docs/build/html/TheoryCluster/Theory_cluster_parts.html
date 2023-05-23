@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Partes de um cluster de computação &#8212; documentação Cluster Cin latest</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/groundwork.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegação</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Índice Geral"
+             accesskey="I">índice</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">documentação Cluster Cin latest</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Partes de um cluster de computação</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="partes-de-um-cluster-de-computacao">
+<h1>Partes de um cluster de computação<a class="headerlink" href="#partes-de-um-cluster-de-computacao" title="Link permanente para este cabeçalho">¶</a></h1>
+<p>Para fornecer capacidades de computação de alto desempenho, clusters podem combinar
+centenas a milhares de computadores, chamados de nós, que são todos interconectados por
+uma rede de comunicação de alto desempenho. A maioria dos nós são projetados para cálculos
+de alto desempenho, mas clusters também podem usar nós especializados para oferecer sistemas
+de arquivos paralelos, bancos de dados, nós de login e até mesmo a funcionalidade de agendamento
+do cluster, conforme ilustrado na imagem abaixo.</p>
+<img alt="../_images/cluster_overview21.png" src="../_images/cluster_overview21.png" />
+<p>Vamos revisar os diferentes tipos de nós que você pode encontrar em um cluster típico.</p>
+<section id="os-nos-de-login">
+<h2>Os nós de login<a class="headerlink" href="#os-nos-de-login" title="Link permanente para este cabeçalho">¶</a></h2>
+<p>Para executar processos de computação em um cluster, você primeiro deve se conectar
+a um cluster e isso é feito através de um <em>nó de login</em>. Esses chamados nós de login
+são o ponto de entrada para a maioria dos clusters.</p>
+<p>Outro ponto de entrada para alguns clusters, como o cluster Mila, é a interface web JupyterHub,
+mas leremos sobre isso mais tarde. Por enquanto, voltemos ao assunto desta seção: os nós de login.
+Para se conectar a eles, você normalmente usaria uma conexão de shell remoto. A ferramenta mais comum
+para fazer isso é o SSH. Você ouvirá e lerá muito sobre essa ferramenta. Imagine-a como um cabo de extensão
+muito longo (e um pouco mágico) que conecta o computador que você está usando agora, como seu laptop, ao terminal
+shell de um computador remoto. Você pode já saber o que é um terminal shell se já usou a linha de comando.</p>
+</section>
+<section id="os-nos-de-computacao">
+<h2>Os nós de computação<a class="headerlink" href="#os-nos-de-computacao" title="Link permanente para este cabeçalho">¶</a></h2>
+<p>No campo da inteligência artificial, geralmente você estará à procura de GPUs.
+Na maioria dos clusters, os nós de computação são aqueles com capacidade de GPU.</p>
+<p>Embora haja um paradigma geral de tendência para uma configuração homogênea para nós,
+isso nem sempre é possível no campo da inteligência artificial, já que o hardware evolui
+rapidamente e é complementado por novos hardware, e assim por diante. Portanto, você frequentemente
+lerá sobre classes de nós computacionais. Alguns deles podem ter modelos de GPU diferentes ou até
+mesmo nenhuma GPU.</p>
+</section>
+<section id="os-nos-de-armazenamento">
+<h2>Os nós de armazenamento<a class="headerlink" href="#os-nos-de-armazenamento" title="Link permanente para este cabeçalho">¶</a></h2>
+<p>Alguns computadores em um cluster funcionam apenas para armazenar e servir arquivos.
+Embora o nome desses computadores possa ser importante para alguns, como usuário,
+você só se preocupa com o caminho dos dados. Mais sobre isso na seção <span class="xref std std-ref">Processamento de dados</span>.</p>
+</section>
+<section id="nos-diferentes-para-usos-diferentes">
+<h2>Nós diferentes para usos diferentes<a class="headerlink" href="#nos-diferentes-para-usos-diferentes" title="Link permanente para este cabeçalho">¶</a></h2>
+<p>É importante notar aqui a diferença nos usos pretendidos entre os nós de computação
+e os nós de login. Enquanto os nós de computação são destinados a computação pesada,
+os nós de login não são.</p>
+<p>Os nós de login, no entanto, são usados por todos que usam o cluster e deve-se tomar cuidado
+para não sobrecarregá-los. Consequentemente, apenas processos muito curtos e leves devem ser
+executados nesses nós, caso contrário, o cluster pode se tornar inacessível. Em outras palavras,
+por favor, abstenha-se de executar processos longos ou de computação intensiva em nós de login,
+pois isso afeta todos os outros usuários. Em alguns casos, você também descobrirá que fazer isso
+pode lhe causar problemas.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/cin-logo.png" alt="Logo"/>
+            </a></p>
+  <div>
+    <h3><a href="../index.html">Tabela de Conteúdo</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Partes de um cluster de computação</a><ul>
+<li><a class="reference internal" href="#os-nos-de-login">Os nós de login</a></li>
+<li><a class="reference internal" href="#os-nos-de-computacao">Os nós de computação</a></li>
+<li><a class="reference internal" href="#os-nos-de-armazenamento">Os nós de armazenamento</a></li>
+<li><a class="reference internal" href="#nos-diferentes-para-usos-diferentes">Nós diferentes para usos diferentes</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Essa Página</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/TheoryCluster/Theory_cluster_parts.rst.txt"
+            rel="nofollow">Exibir Fonte</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Busca rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ir" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegação</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Índice Geral"
+             >índice</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">documentação Cluster Cin latest</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Partes de um cluster de computação</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023.
+      Criada usando <a href="https://www.sphinx-doc.org/pt_BR/master">Sphinx</a> 5.3.0.
+    </div>
+  </body>
+</html>

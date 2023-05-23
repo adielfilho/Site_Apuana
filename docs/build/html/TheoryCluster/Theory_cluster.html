@@ -1,0 +1,398 @@
+
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>O que é um cluster de computadores? &#8212; documentação Cluster Cin latest</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/groundwork.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" />
+    <link rel="next" title="Infraestrutura de computação e políticas" href="../information.html" />
+    <link rel="prev" title="Acessando o Cluster" href="../usage.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegação</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Índice Geral"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="../information.html" title="Infraestrutura de computação e políticas"
+             accesskey="N">próximo</a> |</li>
+        <li class="right" >
+          <a href="../usage.html" title="Acessando o Cluster"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">documentação Cluster Cin latest</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">O que é um cluster de computadores?</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="o-que-e-um-cluster-de-computadores">
+<h1>O que é um cluster de computadores?<a class="headerlink" href="#o-que-e-um-cluster-de-computadores" title="Link permanente para este cabeçalho">¶</a></h1>
+<p>Um cluster de computadores <a class="reference external" href="https://pt.wikipedia.org/wiki/Cluster">https://pt.wikipedia.org/wiki/Cluster</a> é um conjunto
+de computadores conectados de forma solta ou estreita que trabalham juntos para que,
+em muitos aspectos, possam ser vistos como um único sistema.</p>
+</section>
+<section id="partes-de-um-cluster-de-computacao">
+<h1>Partes de um cluster de computação<a class="headerlink" href="#partes-de-um-cluster-de-computacao" title="Link permanente para este cabeçalho">¶</a></h1>
+<p>Para fornecer capacidades de computação de alto desempenho, clusters podem combinar
+centenas a milhares de computadores, chamados de nós, que são todos interconectados por
+uma rede de comunicação de alto desempenho. A maioria dos nós são projetados para cálculos
+de alto desempenho, mas clusters também podem usar nós especializados para oferecer sistemas
+de arquivos paralelos, bancos de dados, nós de login e até mesmo a funcionalidade de agendamento
+do cluster, conforme ilustrado na imagem abaixo.</p>
+<img alt="../_images/cluster_overview21.png" src="../_images/cluster_overview21.png" />
+<p>Vamos revisar os diferentes tipos de nós que você pode encontrar em um cluster típico.</p>
+<section id="os-nos-de-login">
+<h2>Os nós de login<a class="headerlink" href="#os-nos-de-login" title="Link permanente para este cabeçalho">¶</a></h2>
+<p>Para executar processos de computação em um cluster, você primeiro deve se conectar
+a um cluster e isso é feito através de um <em>nó de login</em>. Esses chamados nós de login
+são o ponto de entrada para a maioria dos clusters.</p>
+<p>Outro ponto de entrada para alguns clusters, como o cluster Mila, é a interface web JupyterHub,
+mas leremos sobre isso mais tarde. Por enquanto, voltemos ao assunto desta seção: os nós de login.
+Para se conectar a eles, você normalmente usaria uma conexão de shell remoto. A ferramenta mais comum
+para fazer isso é o SSH. Você ouvirá e lerá muito sobre essa ferramenta. Imagine-a como um cabo de extensão
+muito longo (e um pouco mágico) que conecta o computador que você está usando agora, como seu laptop, ao terminal
+shell de um computador remoto. Você pode já saber o que é um terminal shell se já usou a linha de comando.</p>
+</section>
+<section id="os-nos-de-computacao">
+<h2>Os nós de computação<a class="headerlink" href="#os-nos-de-computacao" title="Link permanente para este cabeçalho">¶</a></h2>
+<p>No campo da inteligência artificial, geralmente você estará à procura de GPUs.
+Na maioria dos clusters, os nós de computação são aqueles com capacidade de GPU.</p>
+<p>Embora haja um paradigma geral de tendência para uma configuração homogênea para nós,
+isso nem sempre é possível no campo da inteligência artificial, já que o hardware evolui
+rapidamente e é complementado por novos hardware, e assim por diante. Portanto, você frequentemente
+lerá sobre classes de nós computacionais. Alguns deles podem ter modelos de GPU diferentes ou até
+mesmo nenhuma GPU.</p>
+</section>
+<section id="os-nos-de-armazenamento">
+<h2>Os nós de armazenamento<a class="headerlink" href="#os-nos-de-armazenamento" title="Link permanente para este cabeçalho">¶</a></h2>
+<p>Alguns computadores em um cluster funcionam apenas para armazenar e servir arquivos.
+Embora o nome desses computadores possa ser importante para alguns, como usuário,
+você só se preocupa com o caminho dos dados. Mais sobre isso na seção <span class="xref std std-ref">Processamento de dados</span>.</p>
+</section>
+<section id="nos-diferentes-para-usos-diferentes">
+<h2>Nós diferentes para usos diferentes<a class="headerlink" href="#nos-diferentes-para-usos-diferentes" title="Link permanente para este cabeçalho">¶</a></h2>
+<p>É importante notar aqui a diferença nos usos pretendidos entre os nós de computação
+e os nós de login. Enquanto os nós de computação são destinados a computação pesada,
+os nós de login não são.</p>
+<p>Os nós de login, no entanto, são usados por todos que usam o cluster e deve-se tomar cuidado
+para não sobrecarregá-los. Consequentemente, apenas processos muito curtos e leves devem ser
+executados nesses nós, caso contrário, o cluster pode se tornar inacessível. Em outras palavras,
+por favor, abstenha-se de executar processos longos ou de computação intensiva em nós de login,
+pois isso afeta todos os outros usuários. Em alguns casos, você também descobrirá que fazer isso
+pode lhe causar problemas.</p>
+</section>
+</section>
+<section id="unix">
+<h1>UNIX<a class="headerlink" href="#unix" title="Link permanente para este cabeçalho">¶</a></h1>
+<p>Todos os clusters geralmente são executados em distribuições GNU/Linux.
+Portanto, é geralmente exigido um conhecimento mínimo de GNU/Linux e BASH para usá-los.</p>
+<blockquote>
+<div><p>Consulte o seguinte tutorial <a class="reference external" href="https://docs.alliancecan.ca/wiki/Linux_introduction">https://docs.alliancecan.ca/wiki/Linux_introduction</a>
+para obter um guia básico sobre como começar com o Linux.</p>
+</div></blockquote>
+</section>
+<section id="o-gerenciador-de-carga-de-trabalho">
+<h1>O gerenciador de carga de trabalho<a class="headerlink" href="#o-gerenciador-de-carga-de-trabalho" title="Link permanente para este cabeçalho">¶</a></h1>
+<p>Em um cluster, os usuários não têm acesso direto aos nós de computação,
+mas se conectam a um nó de login e adicionam trabalhos à fila do gerenciador
+de carga de trabalho. Sempre que houver recursos disponíveis para executar
+esses trabalhos, eles serão alocados para um nó de computação e executados,
+o que pode acontecer imediatamente ou após uma espera de vários dias.</p>
+<p>Um trabalho consiste em uma série de etapas que serão executadas uma após a outra.
+Isso é feito para que você possa agendar uma sequência de processos que podem usar
+os resultados das etapas anteriores sem ter que interagir manualmente com o escalonador.</p>
+<p>Cada etapa pode ter qualquer número de tarefas, que são grupos de processos que podem
+ser agendados independentemente no cluster, mas podem ser executados em paralelo se houver
+recursos disponíveis. A distinção entre etapas e tarefas é que várias tarefas, se fizerem
+parte da mesma etapa, não podem depender dos resultados de outras tarefas porque não há
+garantias sobre a ordem em que serão executadas.</p>
+<p>Finalmente, cada grupo de processos é a unidade básica agendada no cluster.
+Ele consiste em um conjunto de processos (ou threads) que podem ser executados
+em vários recursos (CPU, GPU, RAM, …) e são agendados juntos como uma unidade
+em uma ou mais máquinas.</p>
+<p>Cada um desses conceitos é adequado para um uso específico. Para treinamento com
+várias GPUs em cargas de trabalho de inteligência artificial, você usaria uma tarefa
+por GPU para paralelismo de dados ou um grupo de processos se estiver fazendo paralelismo de modelo.
+A otimização de hiperparâmetros pode ser feita usando uma combinação de tarefas e etapas, mas
+provavelmente é melhor deixá-la para um framework fora do escopo do gerenciador de carga de trabalho.</p>
+<p>Se tudo isso parece complicado, você deve saber que todas essas coisas não precisam ser usadas sempre.
+É perfeitamente aceitável enviar trabalhos com uma única etapa, uma única tarefa e um único processo.</p>
+<p>Os recursos disponíveis no cluster não são infinitos e é o trabalho do
+gerenciador de carga alocá-los. Sempre que uma solicitação de trabalho é feita
+e não há recursos suficientes disponíveis para iniciar imediatamente, ele
+será colocado na fila.</p>
+<p>Uma vez que um trabalho está na fila, ele permanecerá lá até que outro trabalho
+termine e, em seguida, o gerenciador de carga tentará usar os recursos liberados
+com trabalhos da fila. A ordem exata em que os trabalhos serão iniciados não é
+fixa, pois depende das políticas locais que podem levar em conta a prioridade do
+usuário, o tempo desde que o trabalho foi solicitado, a quantidade de recursos
+solicitados e possivelmente outras coisas. Deve haver uma ferramenta que acompanha
+o gerenciador em que você pode ver o status dos trabalhos em fila e por que eles
+permanecem na fila.</p>
+<p>O gerenciador de carga irá dividir o cluster em partições de acordo com
+a configuração definida pelos administradores. Uma partição é um conjunto de
+máquinas geralmente reservadas para um propósito específico. Um exemplo pode
+ser máquinas somente com CPU para pré-processamento configuradas como uma partição
+separada. É possível que várias partições compartilhem recursos.</p>
+<p>Sempre haverá pelo menos uma partição que é a partição padrão na qual os trabalhos
+sem solicitação específica serão executados. Outras partições podem ser solicitadas,
+mas podem ser restritas a um grupo de usuários, dependendo da política.</p>
+<p>As partições são úteis do ponto de vista de política para garantir o uso eficiente
+dos recursos do cluster e evitar o uso excessivo de um tipo de recurso que possa
+bloquear o uso de outro. Elas também são úteis para clusters heterogêneos, onde
+diferentes hardwares são misturados e nem todos os softwares são compatíveis com
+todos eles (por exemplo, CPUs x86 e POWER).</p>
+<p>Para garantir uma distribuição justa dos recursos de computação para todos,
+o gerenciador de carga estabelece limites na quantidade de recursos que um
+único usuário pode usar de uma só vez. Esses limites podem ser limites rígidos
+que impedem a execução de trabalhos quando você ultrapassa ou limites flexíveis
+que permitirão que você execute trabalhos, mas apenas até que outro trabalho precise dos recursos.</p>
+<p>A política do administrador determinará quais são os limites exatos para um cluster
+ou usuário específico e se eles são limites rígidos ou flexíveis.</p>
+<p>A forma como os limites flexíveis são aplicados é por meio de preempção, o que
+significa que quando outro trabalho com prioridade mais alta precisa dos recursos
+que seu trabalho está usando, seu trabalho receberá um sinal de que precisa salvar
+seu estado e sair. Será dado um certo tempo para isso (o período de graça, que pode ser de 0s)
+e depois ele será encerrado à força se ainda estiver em execução.</p>
+<p>Dependendo do gerenciador de carga em uso e da configuração do cluster, um trabalho
+que seja preemptionado dessa forma pode ser automaticamente reagendado para ter a
+chance de terminar ou pode caber ao trabalho reagendar-se.</p>
+<p>O outro limite que pode ser encontrado é com um trabalho que ultrapassa seus limites declarados.
+Ao agendar um trabalho, você declara quanto de recursos ele precisará (RAM, CPUs, GPUs, …).
+Alguns desses recursos podem ter valores padrão e não serem definidos explicitamente. Para
+determinados tipos de dispositivos, como GPUs, o acesso a unidades acima do limite do seu
+trabalho fica indisponível. Para outros, como RAM, o uso é monitorado e seu trabalho será
+encerrado se exceder o limite. Isso torna importante garantir que você estime com precisão o uso de recursos.</p>
+<p>Comandos de cliente <strong>Slurm</strong> estão disponíveis nos nós de login para que você possa enviar
+trabalhos para o controlador principal e adicioná-los à fila. Existem dois tipos de trabalhos:
+trabalhos em <em>lote</em> (batch) e trabalhos <em>interativos</em> (interactive).</p>
+</section>
+<section id="processamento-de-dados">
+<h1>Processamento de dados<a class="headerlink" href="#processamento-de-dados" title="Link permanente para este cabeçalho">¶</a></h1>
+<p>Para processar grandes quantidades de dados comuns para o aprendizado profundo,
+seja para pré-processamento de conjuntos de dados ou treinamento, existem várias técnicas.
+Cada uma tem usos e limitações típicas</p>
+<section id="paralelismo-de-dados">
+<h2>Paralelismo de dados<a class="headerlink" href="#paralelismo-de-dados" title="Link permanente para este cabeçalho">¶</a></h2>
+<p>A primeira técnica é chamada de <strong>paralelismo de dados</strong> (também conhecida
+como paralelismo de tarefas na ciência da computação formal). Você simplesmente
+executa muitos processos, cada um lidando com uma parte dos dados que você deseja processar.
+Isso é de longe a técnica mais fácil de usar e deve ser favorecida sempre que possível. Um exemplo
+comum disso é a otimização de hiperparâmetros.</p>
+<p>Para cálculos realmente pequenos, o tempo para configurar vários processos pode
+ser maior do que o tempo de processamento e levar a desperdício. Isso pode ser
+resolvido agrupando alguns dos processos juntos, fazendo o processamento sequencial
+de subpartições dos dados.</p>
+<p>Para os sistemas de cluster, também não é recomendável lançar milhares de trabalhos
+e mesmo que cada trabalho fosse executado por um período razoável de tempo
+(vários minutos no mínimo), seria melhor formar grupos maiores até que a
+quantidade de trabalhos seja no máximo algumas centenas.</p>
+<p>Finalmente, outra coisa a ter em mente é que a largura de banda de transferência
+é limitada entre os sistemas de arquivos (consulte <span class="xref std std-ref">Preocupações com o sistema
+de arquivos`</span>) e os nós de computação e se você executar muitos trabalhos usando muitos
+dados de uma só vez, eles podem não ser mais rápidos porque passarão seu tempo esperando
+pelos dados chegarem.</p>
+</section>
+<section id="paralelismo-de-modelo">
+<h2>Paralelismo de modelo<a class="headerlink" href="#paralelismo-de-modelo" title="Link permanente para este cabeçalho">¶</a></h2>
+<p>A segunda técnica é chamada de <strong>paralelismo de modelo</strong> (que não tem um
+único equivalente na ciência da computação formal). É usada principalmente
+quando uma única instância de um modelo não cabe em um recurso de computaçã
+o (como a memória da GPU sendo muito pequena para todos os parâmetros).</p>
+<p>Nesse caso, o modelo é dividido em suas partes constituintes, cada uma processada
+independentemente e seus resultados intermediários comunicados entre si para chegar
+a um resultado final.</p>
+<p>Isso é geralmente mais difícil, mas necessário para trabalhar com modelos maiores e mais poderosos como o GPT.</p>
+</section>
+<section id="preocupacoes-com-a-comunicacao">
+<h2>Preocupações com a comunicação<a class="headerlink" href="#preocupacoes-com-a-comunicacao" title="Link permanente para este cabeçalho">¶</a></h2>
+<p>A principal diferença dessas duas abordagens é a necessidade de comunicação
+entre os múltiplos processos. Alguns métodos comuns de treinamento, como o
+descida de gradiente estocástica, ficam em algum lugar entre os dois, pois
+requerem alguma comunicação, mas não muita. A maioria das pessoas classifica-o
+como paralelismo de dados, já que fica mais próximo desse fim.</p>
+<p>Em geral, para tarefas de paralelismo de dados ou tarefas que se comunicam com
+pouca frequência, não faz muita diferença onde os processos estão, porque a largura
+de banda e a latência de comunicação não terão muito impacto no tempo necessário
+para concluir o trabalho. As tarefas individuais podem geralmente ser agendadas independentemente.</p>
+<p>Por outro lado, para o paralelismo de modelo, você precisa prestar mais atenção
+a onde estão suas tarefas. Nesse caso, geralmente é necessário usar as instalações
+do gerenciador de carga de trabalho para agrupar as tarefas de modo que estejam
+na mesma máquina ou em máquinas que estejam intimamente ligadas para garantir
+uma comunicação ideal. A melhor alocação depende da arquitetura específica do
+cluster disponível e das tecnologias que ele suporta (como InfiniBand, RDMA, NVLink ou outras).</p>
+</section>
+<section id="preocupacoes-com-o-sistema-de-arquivos">
+<h2>Preocupações com o sistema de arquivos<a class="headerlink" href="#preocupacoes-com-o-sistema-de-arquivos" title="Link permanente para este cabeçalho">¶</a></h2>
+<p>Ao trabalhar em um cluster, você geralmente encontrará vários sistemas
+de arquivos diferentes. Normalmente, haverá nomes como “home”, “scratch”, “datasets”, “projects”, “tmp”.</p>
+<p>A razão de ter diferentes sistemas de arquivos disponíveis em vez de um
+único gigante é fornecer para diferentes casos de uso. Por exemplo, o
+sistema de arquivos “datasets” seria otimizado para leituras rápidas,
+mas teria desempenho lento de escrita. Isso ocorre porque os conjuntos
+de dados geralmente são escritos uma vez e, em seguida, lidos com muita frequência para treinamento.</p>
+<p>O conjunto de sistemas de arquivos fornecido pelo cluster que você está
+usando deve ser detalhado na documentação desse cluster e os nomes
+podem diferir dos acima. Você deve prestar atenção ao caso de uso
+recomendado na documentação e usar o sistema de arquivos apropriado
+para o trabalho apropriado. Existem casos em que um trabalho rodou
+centenas de vezes mais devagar porque tentou usar um sistema de arquivos que não era adequado para o trabalho.</p>
+<p>Uma última coisa a prestar atenção é a política de retenção de dados
+para os sistemas de arquivos. Isso tem dois subpontos: por quanto tempo
+os dados são mantidos e se há backups.</p>
+<p>Alguns sistemas de arquivos terão um limite de tempo para manter seus arquivos.
+Tipicamente, o limite é algum número de dias (como 90 dias), mas pode ser “enquanto
+o trabalho estiver sendo executado” para alguns.</p>
+<p>Quanto aos backups, alguns sistemas de arquivos não terão um limite para os dados,
+mas também não terão backups. Para estes, é importante manter uma cópia de quaisquer
+dados cruciais em outro lugar. Os dados não serão excluídos intencionalmente, mas o
+sistema de arquivos pode falhar e perder todos ou parte de seus dados. Se você tiver
+algum dado que é crucial para um artigo ou para a sua tese, mantenha uma cópia adicional em outro lugar.</p>
+</section>
+</section>
+<section id="software-no-cluster">
+<h1>Software no cluster<a class="headerlink" href="#software-no-cluster" title="Link permanente para este cabeçalho">¶</a></h1>
+<p>Esta seção tem como objetivo conscientizar sobre os problemas que se pode encontrar
+ao tentar executar um software em diferentes computadores e como isso é tratado em
+clusters de computação típicos.</p>
+<p>Em relação ao desenvolvimento em Python, recomendamos o uso de ambientes virtuais para
+instalar pacotes Python em isolamento.</p>
+<section id="modulos-de-software-do-cluster">
+<h2>Módulos de software do cluster<a class="headerlink" href="#modulos-de-software-do-cluster" title="Link permanente para este cabeçalho">¶</a></h2>
+<p>Os módulos são pequenos arquivos que modificam suas variáveis de ambiente para
+apontar para versões específicas de vários softwares e bibliotecas. Por exemplo,
+um módulo pode fornecer o comando “python” para apontar para o Python 3.7, outro
+pode ativar a versão 11.0 do CUDA, outro pode fornecer o pacote “torch” e assim por diante.</p>
+<p>Para obter mais informações, consulte <span class="xref std std-ref">O comando module</span>.</p>
+</section>
+<section id="conteineres">
+<h2>Contêineres<a class="headerlink" href="#conteineres" title="Link permanente para este cabeçalho">¶</a></h2>
+<p>Os contêineres são uma forma especial de isolamento de software e suas dependências.
+Um contêiner é essencialmente uma máquina virtual leve: ele encapsula um sistema de arquivos
+virtual para uma instalação completa do sistema operacional, bem como uma rede e ambiente de
+execução separados.</p>
+<p>Por exemplo, você pode criar um contêiner Ubuntu no qual instala vários pacotes usando “apt”,
+modifica configurações como faria como usuário root, e assim por diante, mas sem interferir na
+sua instalação principal. Uma vez construído, um contêiner pode ser executado em qualquer sistema
+compatível.</p>
+<p>Para obter mais informações, consulte <span class="xref std std-ref">Usando contêineres</span>.</p>
+</section>
+<section id="ambientes-virtuais-python">
+<h2>Ambientes virtuais Python<a class="headerlink" href="#ambientes-virtuais-python" title="Link permanente para este cabeçalho">¶</a></h2>
+<p>Um ambiente virtual em Python é um ambiente local e isolado no qual você pode instalar
+ou desinstalar pacotes Python sem interferir no ambiente global (ou em outros ambientes virtuais).
+Para usar um ambiente virtual, primeiro você deve ativá-lo.</p>
+<p>Para obter mais informações, consulte <span class="xref std std-ref">Ambientes virtuais</span>.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/cin-logo.png" alt="Logo"/>
+            </a></p>
+  <div>
+    <h3><a href="../index.html">Tabela de Conteúdo</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">O que é um cluster de computadores?</a></li>
+<li><a class="reference internal" href="#partes-de-um-cluster-de-computacao">Partes de um cluster de computação</a><ul>
+<li><a class="reference internal" href="#os-nos-de-login">Os nós de login</a></li>
+<li><a class="reference internal" href="#os-nos-de-computacao">Os nós de computação</a></li>
+<li><a class="reference internal" href="#os-nos-de-armazenamento">Os nós de armazenamento</a></li>
+<li><a class="reference internal" href="#nos-diferentes-para-usos-diferentes">Nós diferentes para usos diferentes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#unix">UNIX</a></li>
+<li><a class="reference internal" href="#o-gerenciador-de-carga-de-trabalho">O gerenciador de carga de trabalho</a></li>
+<li><a class="reference internal" href="#processamento-de-dados">Processamento de dados</a><ul>
+<li><a class="reference internal" href="#paralelismo-de-dados">Paralelismo de dados</a></li>
+<li><a class="reference internal" href="#paralelismo-de-modelo">Paralelismo de modelo</a></li>
+<li><a class="reference internal" href="#preocupacoes-com-a-comunicacao">Preocupações com a comunicação</a></li>
+<li><a class="reference internal" href="#preocupacoes-com-o-sistema-de-arquivos">Preocupações com o sistema de arquivos</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#software-no-cluster">Software no cluster</a><ul>
+<li><a class="reference internal" href="#modulos-de-software-do-cluster">Módulos de software do cluster</a></li>
+<li><a class="reference internal" href="#conteineres">Contêineres</a></li>
+<li><a class="reference internal" href="#ambientes-virtuais-python">Ambientes virtuais Python</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Tópico anterior</h4>
+    <p class="topless"><a href="../usage.html"
+                          title="capítulo anterior">Acessando o Cluster</a></p>
+  </div>
+  <div>
+    <h4>Próximo tópico</h4>
+    <p class="topless"><a href="../information.html"
+                          title="próximo capítulo">Infraestrutura de computação e políticas</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Essa Página</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/TheoryCluster/Theory_cluster.rst.txt"
+            rel="nofollow">Exibir Fonte</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Busca rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ir" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegação</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Índice Geral"
+             >índice</a></li>
+        <li class="right" >
+          <a href="../information.html" title="Infraestrutura de computação e políticas"
+             >próximo</a> |</li>
+        <li class="right" >
+          <a href="../usage.html" title="Acessando o Cluster"
+             >anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">documentação Cluster Cin latest</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">O que é um cluster de computadores?</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023.
+      Criada usando <a href="https://www.sphinx-doc.org/pt_BR/master">Sphinx</a> 5.3.0.
+    </div>
+  </body>
+</html>

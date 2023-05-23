@@ -12,8 +12,7 @@ from datetime import datetime
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = [
-    ]
+extensions = []
 
 project = 'Cluster Cin'
 copyright = str(datetime.now().year)
@@ -33,7 +32,7 @@ language = 'pt_BR'
 
 html_theme = 'groundwork'
 html_theme_path = ["."]
-html_static_path = ['_static']
+html_static_path = ['../../docs/build/html/_static']
 
 #html_theme_path = [sphinx_theme.get_html_theme_path()]
-html_logo = '/home/mordor/Ambiente-Python/Cluster-Doc/docs/build/html/_static/cin-logo.png'
+html_logo = '../../docs/source/cin-logo.png'
