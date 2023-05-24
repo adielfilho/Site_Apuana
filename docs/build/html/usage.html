@@ -316,16 +316,12 @@ e GPU para cada partição são apresentados na tabela abaixo.</p>
 –gpus=n_gpus script.sh</p>
 <p>Também é possível ajustar os limites de recursos no cabeçalho do
 script.sh:</p>
-<table class="docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p>#!/bin/sh
-#SBATCH –cpus-per-task=n_cpus</p>
-<p>#SBATCH –gpus=n_gpus</p>
-<p>#SBATCH –mem=memoria</p>
-</td>
-</tr>
-</tbody>
-</table>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>!/bin/sh
+<span class="gp">#</span>SBATCH<span class="w"> </span>--cpus-per-task<span class="o">=</span>n_cpus
+<span class="gp">#</span>SBATCH<span class="w"> </span>--gpus<span class="o">=</span>n_gpus
+<span class="gp">#</span>SBATCH<span class="w"> </span>--mem<span class="o">=</span>memoria
+</pre></div>
+</div>
 </section>
 <section id="politicas-de-priorizacao-de-jobs">
 <span id="h-r8jgqwv0re1s"></span><span id="h-isb7a7i9a70r"></span><h1>Políticas de priorização de jobs<a class="headerlink" href="#politicas-de-priorizacao-de-jobs" title="Link permanente para este cabeçalho">¶</a></h1>

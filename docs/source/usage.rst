@@ -330,14 +330,13 @@ sbatch -p nome_particao –cpus-per-task n_cpus --mem=memoria
 Também é possível ajustar os limites de recursos no cabeçalho do
 script.sh:
 
-+-----------------------------------------------------------------------+
-| #!/bin/sh                                                             |
-| #SBATCH --cpus-per-task=n_cpus                                        |
-|                                                                       |
-| #SBATCH --gpus=n_gpus                                                 |
-|                                                                       |
-| #SBATCH --mem=memoria                                                 |
-+-----------------------------------------------------------------------+
+.. code-block:: console
+
+ #!/bin/sh                                                             
+ #SBATCH --cpus-per-task=n_cpus                                                                                                 
+ #SBATCH --gpus=n_gpus                                                                                                                
+ #SBATCH --mem=memoria                                                 
+
 
 .. _h.isb7a7i9a70r:
 
