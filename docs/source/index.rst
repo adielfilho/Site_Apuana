@@ -45,7 +45,11 @@ Para acessar o cluster é necessário ter um login cin.ufpe.br e ter o acesso ha
    UserGuide/Userguide
    
 
+.. toctree::
+   :caption: Dashboard do cluster Apuana
+   :maxdepth: 2
 
+   dashboard
 
 
 
