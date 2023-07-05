@@ -49,8 +49,12 @@
 acesso habilitado as máquinas de acesso do cluster, também é necessário
 estar na VPN do CIn.</p>
 </section>
+<section id="acessando-a-vpn-do-cin">
+<h1>Acessando a VPN do CIn<a class="headerlink" href="#acessando-a-vpn-do-cin" title="Link permanente para este cabeçalho">¶</a></h1>
+<p>Mesmo fazendo a conexão utilizando a rede interna do CIn, é necessário usar a VPN do CIn. Para maiores informações sobre o uso da VPN do CIn, consultar a documentação disponível na página do HelpDesk para VPN do CIn (<a class="reference external" href="https://helpdesk.cin.ufpe.br/redes/vpn">https://helpdesk.cin.ufpe.br/redes/vpn</a>). O canal para tirar dúvidas sobre conexão com a VPN é através do HelpDesk (<a class="reference external" href="mailto:helpdesk&#37;&#52;&#48;cin&#46;ufpe&#46;br">helpdesk<span>&#64;</span>cin<span>&#46;</span>ufpe<span>&#46;</span>br</a>)</p>
+</section>
 <section id="conectando-a-maquina-de-acesso">
-<span id="h-krbkxr4n0rks"></span><h1>Conectando a Maquina de Acesso<a class="headerlink" href="#conectando-a-maquina-de-acesso" title="Link permanente para este cabeçalho">¶</a></h1>
+<h1>Conectando a Maquina de Acesso<a class="headerlink" href="#conectando-a-maquina-de-acesso" title="Link permanente para este cabeçalho">¶</a></h1>
 <p>O envio de tarefas para o cluster precisa ser feito a partir de uma
 maquina de acesso, a entrada na maquina de acesso é realizado através do
 SSH</p>
@@ -174,8 +178,8 @@ job_output.txt):</p>
 </pre></div>
 </div>
 </section>
-<section id="exemplo-com-repositorio-do-publico-do-github">
-<span id="h-p9bbx0k61d7n"></span><span id="h-16ozdksheroh"></span><h2>Exemplo com repositório do público do GitHub<a class="headerlink" href="#exemplo-com-repositorio-do-publico-do-github" title="Link permanente para este cabeçalho">¶</a></h2>
+<section id="exemplo-com-repositorio-publico-do-github">
+<span id="h-p9bbx0k61d7n"></span><span id="h-16ozdksheroh"></span><h2>Exemplo com repositório público do GitHub<a class="headerlink" href="#exemplo-com-repositorio-publico-do-github" title="Link permanente para este cabeçalho">¶</a></h2>
 <p>Primeiro é necessário clonar o repositório. Obs.: o diretório home do
 usuário é sincronizado entre todas as máquinas.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git clone https://github.com/username/repoName.git</span>
@@ -223,8 +227,8 @@ pois pode-se escolher a versão do python (dentre as listadas acima) e
 das dependências mais adequadas para o funcionamento do seu código no
 ambiente virtual.</p>
 </section>
-<section id="exemplo-com-repositorio-do-privado-do-github">
-<span id="h-u2s1lukw4mc7"></span><h2>Exemplo com repositório do privado do GitHub<a class="headerlink" href="#exemplo-com-repositorio-do-privado-do-github" title="Link permanente para este cabeçalho">¶</a></h2>
+<section id="exemplo-com-repositorio-privado-do-github">
+<span id="h-u2s1lukw4mc7"></span><h2>Exemplo com repositório privado do GitHub<a class="headerlink" href="#exemplo-com-repositorio-privado-do-github" title="Link permanente para este cabeçalho">¶</a></h2>
 <p>Clonando um repositório privado :</p>
 <p>Para clone repositorios privados recomendamos conectar na maquina de
 login (slurm-client1) passando adiante o seu agente SSH, permitindo a
@@ -353,13 +357,14 @@ Estes fatores possuem pesos iguais.</p>
     <h3><a href="index.html">Tabela de Conteúdo</a></h3>
     <ul>
 <li><a class="reference internal" href="#">Acessando o Cluster</a></li>
+<li><a class="reference internal" href="#acessando-a-vpn-do-cin">Acessando a VPN do CIn</a></li>
 <li><a class="reference internal" href="#conectando-a-maquina-de-acesso">Conectando a Maquina de Acesso</a></li>
 <li><a class="reference internal" href="#ambientes-virtuais-python">Ambientes Virtuais Python</a></li>
 <li><a class="reference internal" href="#pip-virtualenv">Pip/Virtualenv</a></li>
 <li><a class="reference internal" href="#execucao-de-jobs">Execução de jobs</a><ul>
 <li><a class="reference internal" href="#comandos-basicos-de-gerenciamento-de-jobs">Comandos básicos de gerenciamento de jobs</a></li>
-<li><a class="reference internal" href="#exemplo-com-repositorio-do-publico-do-github">Exemplo com repositório do público do GitHub</a></li>
-<li><a class="reference internal" href="#exemplo-com-repositorio-do-privado-do-github">Exemplo com repositório do privado do GitHub</a></li>
+<li><a class="reference internal" href="#exemplo-com-repositorio-publico-do-github">Exemplo com repositório público do GitHub</a></li>
+<li><a class="reference internal" href="#exemplo-com-repositorio-privado-do-github">Exemplo com repositório privado do GitHub</a></li>
 <li><a class="reference internal" href="#sincronizacao-de-arquivos-entre-o-cluster-a-sua-maquina">Sincronização de Arquivos Entre o Cluster a Sua Máquina</a></li>
 </ul>
 </li>

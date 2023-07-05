@@ -7,7 +7,10 @@ Para acessar o cluster é necessário ter um login cin.ufpe.br e ter o
 acesso habilitado as máquinas de acesso do cluster, também é necessário
 estar na VPN do CIn.
 
-.. _h.krbkxr4n0rks:
+Acessando a VPN do CIn
+------------------------
+Mesmo fazendo a conexão utilizando a rede interna do CIn, é necessário usar a VPN do CIn. Para maiores informações sobre o uso da VPN do CIn, consultar a documentação disponível na página do HelpDesk para VPN do CIn (https://helpdesk.cin.ufpe.br/redes/vpn). O canal para tirar dúvidas sobre conexão com a VPN é através do HelpDesk (helpdesk@cin.ufpe.br)
+
 
 Conectando a Maquina de Acesso
 ------------------------------
@@ -179,7 +182,7 @@ Para cancelar o job faça:
 
 .. _h.p9bbx0k61d7n:
 
-Exemplo com repositório do público do GitHub
+Exemplo com repositório público do GitHub
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Primeiro é necessário clonar o repositório. Obs.: o diretório home do
@@ -239,7 +242,7 @@ ambiente virtual.
 
 .. _h.u2s1lukw4mc7:
 
-Exemplo com repositório do privado do GitHub
+Exemplo com repositório privado do GitHub
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Clonando um repositório privado :
