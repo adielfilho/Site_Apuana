@@ -3,7 +3,7 @@ Arquitetura do cluster Apuana
 
 Visão geral da arquitetura e acesso
 -----------------------------------
-.. image:: arquitetura-cluster.png
+.. image:: arquitetura_cluster_final.png
 
 Visão geral de funcionamento do cluster
 ---------------------------------------
