@@ -5,7 +5,7 @@ Acessando o Cluster
 
 Para acessar o cluster é necessário ter um login cin.ufpe.br e ter o
 acesso habilitado as máquinas de acesso do cluster, também é necessário
-estar na VPN do CIn.
+estar na VPN do CIn. O primeiro passo é solicitar o acesso ao cluster através do \ `formulário de cadastro <https://docs.google.com/forms/d/1bDDI9WIi1aipfp9BqoCOYne7CFQtOGjgdDzh9kr0drw/edit>`__\.
 
 Acessando a VPN do CIn
 ------------------------
