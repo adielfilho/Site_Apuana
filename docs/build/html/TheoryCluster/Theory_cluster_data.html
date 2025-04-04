@@ -1,31 +1,27 @@
-
 <!DOCTYPE html>
 
-<html lang="pt-BR">
+<html lang="pt-BR" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Processamento de dados &#8212; documentação Cluster Cin latest</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/groundwork.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/translations.js"></script>
+    <title>Processamento de dados &#8212; Documentação Cluster Cin latest</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/groundwork.css?v=594d7a89" />
+    <script src="../_static/documentation_options.js?v=3ccd3dfb"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=71a39b36"></script>
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" /> 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navegação</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="Índice Geral"
              accesskey="I">índice</a></li>
-        <li class="nav-item nav-item-0"><a href="../index.html">documentação Cluster Cin latest</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentação Cluster Cin latest</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Processamento de dados</a></li> 
       </ul>
     </div>  
@@ -36,12 +32,12 @@
           <div class="body" role="main">
             
   <section id="processamento-de-dados">
-<h1>Processamento de dados<a class="headerlink" href="#processamento-de-dados" title="Link permanente para este cabeçalho">¶</a></h1>
+<h1>Processamento de dados<a class="headerlink" href="#processamento-de-dados" title="Link para este cabeçalho">¶</a></h1>
 <p>Para processar grandes quantidades de dados comuns para o aprendizado profundo,
 seja para pré-processamento de conjuntos de dados ou treinamento, existem várias técnicas.
 Cada uma tem usos e limitações típicas</p>
 <section id="paralelismo-de-dados">
-<h2>Paralelismo de dados<a class="headerlink" href="#paralelismo-de-dados" title="Link permanente para este cabeçalho">¶</a></h2>
+<h2>Paralelismo de dados<a class="headerlink" href="#paralelismo-de-dados" title="Link para este cabeçalho">¶</a></h2>
 <p>A primeira técnica é chamada de <strong>paralelismo de dados</strong> (também conhecida
 como paralelismo de tarefas na ciência da computação formal). Você simplesmente
 executa muitos processos, cada um lidando com uma parte dos dados que você deseja processar.
@@ -62,7 +58,7 @@ dados de uma só vez, eles podem não ser mais rápidos porque passarão seu tem
 pelos dados chegarem.</p>
 </section>
 <section id="paralelismo-de-modelo">
-<h2>Paralelismo de modelo<a class="headerlink" href="#paralelismo-de-modelo" title="Link permanente para este cabeçalho">¶</a></h2>
+<h2>Paralelismo de modelo<a class="headerlink" href="#paralelismo-de-modelo" title="Link para este cabeçalho">¶</a></h2>
 <p>A segunda técnica é chamada de <strong>paralelismo de modelo</strong> (que não tem um
 único equivalente na ciência da computação formal). É usada principalmente
 quando uma única instância de um modelo não cabe em um recurso de computaçã
@@ -73,7 +69,7 @@ a um resultado final.</p>
 <p>Isso é geralmente mais difícil, mas necessário para trabalhar com modelos maiores e mais poderosos como o GPT.</p>
 </section>
 <section id="preocupacoes-com-a-comunicacao">
-<h2>Preocupações com a comunicação<a class="headerlink" href="#preocupacoes-com-a-comunicacao" title="Link permanente para este cabeçalho">¶</a></h2>
+<h2>Preocupações com a comunicação<a class="headerlink" href="#preocupacoes-com-a-comunicacao" title="Link para este cabeçalho">¶</a></h2>
 <p>A principal diferença dessas duas abordagens é a necessidade de comunicação
 entre os múltiplos processos. Alguns métodos comuns de treinamento, como o
 descida de gradiente estocástica, ficam em algum lugar entre os dois, pois
@@ -91,7 +87,7 @@ uma comunicação ideal. A melhor alocação depende da arquitetura específica 
 cluster disponível e das tecnologias que ele suporta (como InfiniBand, RDMA, NVLink ou outras).</p>
 </section>
 <section id="preocupacoes-com-o-sistema-de-arquivos">
-<h2>Preocupações com o sistema de arquivos<a class="headerlink" href="#preocupacoes-com-o-sistema-de-arquivos" title="Link permanente para este cabeçalho">¶</a></h2>
+<h2>Preocupações com o sistema de arquivos<a class="headerlink" href="#preocupacoes-com-o-sistema-de-arquivos" title="Link para este cabeçalho">¶</a></h2>
 <p>Ao trabalhar em um cluster, você geralmente encontrará vários sistemas
 de arquivos diferentes. Normalmente, haverá nomes como “home”, “scratch”, “datasets”, “projects”, “tmp”.</p>
 <p>A razão de ter diferentes sistemas de arquivos disponíveis em vez de um
@@ -124,10 +120,10 @@ algum dado que é crucial para um artigo ou para a sua tese, mantenha uma cópia
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
-              <img class="logo" src="../_static/cin-logo.png" alt="Logo"/>
+              <img class="logo" src="../_static/cin-logo.png" alt="Logo de Cluster Cin"/>
             </a></p>
   <div>
     <h3><a href="../index.html">Tabela de Conteúdo</a></h3>
@@ -149,7 +145,7 @@ algum dado que é crucial para um artigo ou para a sua tese, mantenha uma cópia
             rel="nofollow">Exibir Fonte</a></li>
     </ul>
    </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Busca rápida</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
@@ -157,25 +153,25 @@ algum dado que é crucial para um artigo ou para a sua tese, mantenha uma cópia
       <input type="submit" value="Ir" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navegação</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="Índice Geral"
              >índice</a></li>
-        <li class="nav-item nav-item-0"><a href="../index.html">documentação Cluster Cin latest</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentação Cluster Cin latest</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Processamento de dados</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023.
-      Criada usando <a href="https://www.sphinx-doc.org/pt_BR/master">Sphinx</a> 5.3.0.
+    &#169; Copyright 2025.
+      Criada usando <a href="https://www.sphinx-doc.org/pt_BR/master">Sphinx</a> 8.2.3.
     </div>
   </body>
 </html>

@@ -1,31 +1,27 @@
-
 <!DOCTYPE html>
 
-<html lang="pt-BR">
+<html lang="pt-BR" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Construindo os containers &#8212; documentação Cluster Cin latest</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/groundwork.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/translations.js"></script>
+    <title>Construindo os containers &#8212; Documentação Cluster Cin latest</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/groundwork.css?v=594d7a89" />
+    <script src="../_static/documentation_options.js?v=3ccd3dfb"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=71a39b36"></script>
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" /> 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navegação</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="Índice Geral"
              accesskey="I">índice</a></li>
-        <li class="nav-item nav-item-0"><a href="../index.html">documentação Cluster Cin latest</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentação Cluster Cin latest</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Construindo os containers</a></li> 
       </ul>
     </div>  
@@ -36,7 +32,7 @@
           <div class="body" role="main">
             
   <section id="construindo-os-containers">
-<h1>Construindo os containers<a class="headerlink" href="#construindo-os-containers" title="Link permanente para este cabeçalho">¶</a></h1>
+<h1>Construindo os containers<a class="headerlink" href="#construindo-os-containers" title="Link para este cabeçalho">¶</a></h1>
 <p>Construir um container é como criar um novo ambiente, exceto que os containers são
 muito mais poderosos, pois são sistemas autocontidos. Com o Singularity, existem
 duas maneiras de construir containers.</p>
@@ -51,7 +47,7 @@ Nos referiremos a este procedimento como singularity sandboxes.</p>
 que precisa, envia para o Singularity e ele instalará tudo para você. Essas listas são chamadas de
 singularity recipes.</p>
 <section id="primeira-maneira-construir-e-usar-um-sandbox">
-<h2>Primeira maneira: construir e usar um sandbox<a class="headerlink" href="#primeira-maneira-construir-e-usar-um-sandbox" title="Link permanente para este cabeçalho">¶</a></h2>
+<h2>Primeira maneira: construir e usar um sandbox<a class="headerlink" href="#primeira-maneira-construir-e-usar-um-sandbox" title="Link para este cabeçalho">¶</a></h2>
 <p>Você pode se perguntar: <em>Em qual máquina devo construir um container?</em></p>
 <p>Antes de tudo, você precisa escolher onde construirá o seu container. Essa
 operação requer muita <strong>memória e alto uso da CPU</strong>.</p>
@@ -89,7 +85,7 @@ Singularity localmente:</p>
 </li>
 </ul>
 <section id="baixando-containers-da-web">
-<h3>Baixando containers da web.<a class="headerlink" href="#baixando-containers-da-web" title="Link permanente para este cabeçalho">¶</a></h3>
+<h3>Baixando containers da web.<a class="headerlink" href="#baixando-containers-da-web" title="Link para este cabeçalho">¶</a></h3>
 <p>Felizmente, você pode não precisar criar containers do zero, pois muitos já foram
 construídos para os softwares de deep learning mais comuns. Você pode encontrá-los
 na maioria em <a class="reference external" href="https://hub.docker.com/">dockerhub</a>.</p>
@@ -109,7 +105,7 @@ será usado como exemplo. Se você estiver usando o TensorFlow, simplesmente sub
 todas as ocorrências de <strong>pytorch</strong> por <strong>tensorflow</strong>.</p>
 </section>
 <section id="como-adicionar-ou-instalar-coisas-em-um-container">
-<h3>Como adicionar ou instalar coisas em um container<a class="headerlink" href="#como-adicionar-ou-instalar-coisas-em-um-container" title="Link permanente para este cabeçalho">¶</a></h3>
+<h3>Como adicionar ou instalar coisas em um container<a class="headerlink" href="#como-adicionar-ou-instalar-coisas-em-um-container" title="Link para este cabeçalho">¶</a></h3>
 <p>O primeiro passo é transformar o seu container somente leitura
 <code class="docutils literal notranslate"><span class="pre">pytorch-1.0.1-cuda10.0-cudnn7-runtime.simg</span></code> em uma versão gravável que
 permitirá que você adicione pacotes.</p>
@@ -141,7 +137,7 @@ diretório <code class="docutils literal notranslate"><span class="pre">$HOME</s
 <p>Você deve instalar seus pacotes em /usr/local.</p>
 </section>
 <section id="criando-diretorios-uteis">
-<h3>Criando diretórios úteis<a class="headerlink" href="#criando-diretorios-uteis" title="Link permanente para este cabeçalho">¶</a></h3>
+<h3>Criando diretórios úteis<a class="headerlink" href="#criando-diretorios-uteis" title="Link para este cabeçalho">¶</a></h3>
 <p>Um dos benefícios dos containers é que você poderá usá-los em diferentes clusters.
 No entanto, para cada cluster, a localização das pastas de datasets e experimentos
 pode ser diferente. Para ser invariante em relação a essas localizações, criaremos
@@ -156,7 +152,7 @@ seu conjunto de dados ao escrever seu código. Seu conjunto de dados estará sem
 em <code class="docutils literal notranslate"><span class="pre">/dataset</span></code>, independentemente do cluster que você estiver usando.</p>
 </section>
 <section id="testes">
-<h3>Testes<a class="headerlink" href="#testes" title="Link permanente para este cabeçalho">¶</a></h3>
+<h3>Testes<a class="headerlink" href="#testes" title="Link para este cabeçalho">¶</a></h3>
 <p>Se você tem algum código que deseja testar antes de finalizar o seu contêiner,
 você tem duas opções. Você pode entrar no seu contêiner e executar o código
 Python dentro dele com:</p>
@@ -177,7 +173,7 @@ Python dentro dele com:</p>
 </div>
 </section>
 <section id="criando-uma-nova-imagem-a-partir-do-sandbox">
-<h3>Criando uma nova imagem a partir do sandbox<a class="headerlink" href="#criando-uma-nova-imagem-a-partir-do-sandbox" title="Link permanente para este cabeçalho">¶</a></h3>
+<h3>Criando uma nova imagem a partir do sandbox<a class="headerlink" href="#criando-uma-nova-imagem-a-partir-do-sandbox" title="Link para este cabeçalho">¶</a></h3>
 <p>Depois que tudo o que você precisa estiver instalado dentro do contêiner,
 você precisa convertê-lo de volta em uma imagem singularity somente leitura com:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">singularity build pytorch_final.simg pytorch</span>
@@ -186,7 +182,7 @@ você precisa convertê-lo de volta em uma imagem singularity somente leitura co
 </section>
 </section>
 <section id="segunda-opcao-use-receitas">
-<span id="recipe-section"></span><h2>Segunda opção: Use receitas<a class="headerlink" href="#segunda-opcao-use-receitas" title="Link permanente para este cabeçalho">¶</a></h2>
+<span id="recipe-section"></span><h2>Segunda opção: Use receitas<a class="headerlink" href="#segunda-opcao-use-receitas" title="Link para este cabeçalho">¶</a></h2>
 <p>Uma receita do Singularity é um arquivo que inclui especificações sobre a instalação
 de software, variáveis de ambiente, arquivos a serem adicionados e metadados do contêiner.
 É um ponto de partida para projetar qualquer contêiner personalizado. Em vez de baixar um
@@ -237,7 +233,7 @@ Como não há acesso ao sudo no cluster, é necessário um computador pessoal ou
 hub para construir um contêiner.</p>
 </div>
 <section id="construir-receita-no-singularity-hub">
-<h3>Construir receita no Singularity Hub<a class="headerlink" href="#construir-receita-no-singularity-hub" title="Link permanente para este cabeçalho">¶</a></h3>
+<h3>Construir receita no Singularity Hub<a class="headerlink" href="#construir-receita-no-singularity-hub" title="Link para este cabeçalho">¶</a></h3>
 <p>O Singularity Hub permite que os usuários criem contêineres a partir de receitas
 diretamente na nuvem do Singularity Hub, o que significa que você não precisa criar
 contêineres sozinho. Você precisa se registrar no <a class="reference external" href="https://www.singularity-hub.org/">singularity-hub</a> e vincular sua conta
@@ -272,7 +268,7 @@ e você poderá baixá-lo do site ou diretamente usando:</p>
 </div>
 </section>
 <section id="exemplo-receita-com-openai-gym-mujoco-e-miniworld">
-<h3>Exemplo: Receita com OpenAI gym, MuJoCo e Miniworld<a class="headerlink" href="#exemplo-receita-com-openai-gym-mujoco-e-miniworld" title="Link permanente para este cabeçalho">¶</a></h3>
+<h3>Exemplo: Receita com OpenAI gym, MuJoCo e Miniworld<a class="headerlink" href="#exemplo-receita-com-openai-gym-mujoco-e-miniworld" title="Link para este cabeçalho">¶</a></h3>
 <p>Aqui está um exemplo de como você pode usar uma receita do Singularity
 para instalar um ambiente complexo como o OpenAI gym, MuJoCo e Miniworld
 em um contêiner baseado em PyTorch.</p>
@@ -444,10 +440,10 @@ em um contêiner baseado em PyTorch.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
-              <img class="logo" src="../_static/cin-logo.png" alt="Logo"/>
+              <img class="logo" src="../_static/cin-logo.png" alt="Logo de Cluster Cin"/>
             </a></p>
   <div>
     <h3><a href="../index.html">Tabela de Conteúdo</a></h3>
@@ -478,7 +474,7 @@ em um contêiner baseado em PyTorch.</p>
             rel="nofollow">Exibir Fonte</a></li>
     </ul>
    </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Busca rápida</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
@@ -486,25 +482,25 @@ em um contêiner baseado em PyTorch.</p>
       <input type="submit" value="Ir" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navegação</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="Índice Geral"
              >índice</a></li>
-        <li class="nav-item nav-item-0"><a href="../index.html">documentação Cluster Cin latest</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentação Cluster Cin latest</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Construindo os containers</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023.
-      Criada usando <a href="https://www.sphinx-doc.org/pt_BR/master">Sphinx</a> 5.3.0.
+    &#169; Copyright 2025.
+      Criada usando <a href="https://www.sphinx-doc.org/pt_BR/master">Sphinx</a> 8.2.3.
     </div>
   </body>
 </html>

@@ -1,35 +1,35 @@
-
 <!DOCTYPE html>
 
-<html lang="pt-BR">
+<html lang="pt-BR" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Guia do usuário &#8212; documentação Cluster Cin latest</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/groundwork.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/translations.js"></script>
+    <title>Guia do usuário &#8212; Documentação Cluster Cin latest</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/groundwork.css?v=594d7a89" />
+    <script src="../_static/documentation_options.js?v=3ccd3dfb"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=71a39b36"></script>
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
+    <link rel="next" title="Dashboard" href="../dashboard.html" />
     <link rel="prev" title="Infraestrutura de computação e políticas" href="../information.html" /> 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navegação</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="Índice Geral"
              accesskey="I">índice</a></li>
         <li class="right" >
+          <a href="../dashboard.html" title="Dashboard"
+             accesskey="N">próximo</a> |</li>
+        <li class="right" >
           <a href="../information.html" title="Infraestrutura de computação e políticas"
              accesskey="P">anterior</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">documentação Cluster Cin latest</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentação Cluster Cin latest</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Guia do usuário</a></li> 
       </ul>
     </div>  
@@ -40,25 +40,25 @@
           <div class="body" role="main">
             
   <section id="guia-do-usuario">
-<span id="userguide"></span><h1>Guia do usuário<a class="headerlink" href="#guia-do-usuario" title="Link permanente para este cabeçalho">¶</a></h1>
+<span id="userguide"></span><h1>Guia do usuário<a class="headerlink" href="#guia-do-usuario" title="Link para este cabeçalho">¶</a></h1>
 <p>…or <em>IDT’s list of opinionated howtos</em></p>
 <p>Esta seção busca fornecer aos usuários da infraestrutura Apuana conhecimentos práticos,
 dicas e truques e comandos de exemplo.</p>
 <section id="executando-o-seu-codigo">
-<h2>Executando o seu código<a class="headerlink" href="#executando-o-seu-codigo" title="Link permanente para este cabeçalho">¶</a></h2>
+<h2>Executando o seu código<a class="headerlink" href="#executando-o-seu-codigo" title="Link para este cabeçalho">¶</a></h2>
 <section id="guia-de-comandos-slurm">
-<h3>Guia de comandos SLURM<a class="headerlink" href="#guia-de-comandos-slurm" title="Link permanente para este cabeçalho">¶</a></h3>
+<h3>Guia de comandos SLURM<a class="headerlink" href="#guia-de-comandos-slurm" title="Link para este cabeçalho">¶</a></h3>
 <section id="uso-basico">
-<h4>Uso básico<a class="headerlink" href="#uso-basico" title="Link permanente para este cabeçalho">¶</a></h4>
+<h4>Uso básico<a class="headerlink" href="#uso-basico" title="Link para este cabeçalho">¶</a></h4>
 <p>A documentação do SLURM <a class="reference external" href="https://slurm.schedmd.com/documentation.html">https://slurm.schedmd.com/documentation.html</a>
 fornece informações extensas sobre os comandos disponíveis para consultar o
 status do cluster ou enviar trabalhos.</p>
 <p>A seguir, são apresentados alguns exemplos básicos de como usar o SLURM.</p>
 </section>
 <section id="enviando-trabalhos">
-<h4>Enviando trabalhos<a class="headerlink" href="#enviando-trabalhos" title="Link permanente para este cabeçalho">¶</a></h4>
+<h4>Enviando trabalhos<a class="headerlink" href="#enviando-trabalhos" title="Link para este cabeçalho">¶</a></h4>
 <section id="trabalho-em-lote">
-<h5>Trabalho em lote<a class="headerlink" href="#trabalho-em-lote" title="Link permanente para este cabeçalho">¶</a></h5>
+<h5>Trabalho em lote<a class="headerlink" href="#trabalho-em-lote" title="Link para este cabeçalho">¶</a></h5>
 <p>Para enviar um trabalho em lote, você precisa criar um script contendo o(s) comando(s) principal(is)
 que deseja executar nos recursos/nós alocados.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>!/bin/bash
@@ -86,7 +86,7 @@ com <code class="docutils literal notranslate"><span class="pre">sbatch</span></
 </div>
 </section>
 <section id="job-interativo">
-<h5>Job interativo<a class="headerlink" href="#job-interativo" title="Link permanente para este cabeçalho">¶</a></h5>
+<h5>Job interativo<a class="headerlink" href="#job-interativo" title="Link para este cabeçalho">¶</a></h5>
 <p>Os gerenciadores de carga geralmente executam trabalhos em lote para evitar ter que monitorar
 sua progressão e deixar o agendador executá-lo assim que os recursos estiverem disponíveis.
 Se você quiser acessar um shell enquanto utiliza recursos do cluster, pode enviar um trabalho
@@ -110,7 +110,7 @@ você quiser obter uma alocação em vários nós.</p>
 </section>
 </section>
 <section id="argumentos-de-submissao-de-tarefas">
-<h4>Argumentos de submissão de tarefas<a class="headerlink" href="#argumentos-de-submissao-de-tarefas" title="Link permanente para este cabeçalho">¶</a></h4>
+<h4>Argumentos de submissão de tarefas<a class="headerlink" href="#argumentos-de-submissao-de-tarefas" title="Link para este cabeçalho">¶</a></h4>
 <p>Para selecionar com precisão os recursos para sua tarefa, vários argumentos estão disponíveis. Os mais importantes são:</p>
 <table class="docutils align-default">
 <thead>
@@ -143,7 +143,7 @@ agendamento do seu trabalho (trabalhos pequenos sempre são executados primeiro)
 </div>
 </section>
 <section id="verificando-job-status">
-<h4>verificando job status<a class="headerlink" href="#verificando-job-status" title="Link permanente para este cabeçalho">¶</a></h4>
+<h4>verificando job status<a class="headerlink" href="#verificando-job-status" title="Link para este cabeçalho">¶</a></h4>
 <p>Para exibir os <em>jobs</em> atualmente na fila, use <code class="docutils literal notranslate"><span class="pre">squeue</span></code> e para obter apenas seus trabalhos digite squeue -u $USER</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>squeue<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span>
 <span class="go">JOBID   USER          NAME    ST  START_TIME         TIME NODES CPUS TRES_PER_NMIN_MEM NODELIST (REASON) COMMENT</span>
@@ -158,7 +158,7 @@ negadas até que os trabalhos existentes nesta associação sejam concluídos.</
 </div>
 </section>
 <section id="removendo-um-job">
-<h4>Removendo um job<a class="headerlink" href="#removendo-um-job" title="Link permanente para este cabeçalho">¶</a></h4>
+<h4>Removendo um job<a class="headerlink" href="#removendo-um-job" title="Link para este cabeçalho">¶</a></h4>
 <p>Para cancelar o seu trabalho, simplesmente use <code class="docutils literal notranslate"><span class="pre">scancel</span></code>.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">scancel 4323674</span>
 </pre></div>
@@ -166,7 +166,7 @@ negadas até que os trabalhos existentes nesta associação sejam concluídos.</
 </section>
 </section>
 <section id="particionamento">
-<h3>Particionamento<a class="headerlink" href="#particionamento" title="Link permanente para este cabeçalho">¶</a></h3>
+<h3>Particionamento<a class="headerlink" href="#particionamento" title="Link para este cabeçalho">¶</a></h3>
 <p>Como não temos muitas GPUs no cluster, os recursos devem ser compartilhados de forma justa.
 A opção <code class="docutils literal notranslate"><span class="pre">--partition=/-p</span></code> do SLURM permite que você defina a prioridade necessária para um trabalho.
 Cada trabalho atribuído com uma prioridade pode interromper trabalhos com prioridade mais baixa:
@@ -240,7 +240,7 @@ apenas com CPU, a partição será traduzida automaticamente para seu equivalent
 </section>
 </section>
 <section id="preocupacoes-e-solucoes-de-portabilidade">
-<h2>Preocupações e soluções de portabilidade<a class="headerlink" href="#preocupacoes-e-solucoes-de-portabilidade" title="Link permanente para este cabeçalho">¶</a></h2>
+<h2>Preocupações e soluções de portabilidade<a class="headerlink" href="#preocupacoes-e-solucoes-de-portabilidade" title="Link para este cabeçalho">¶</a></h2>
 <p>Ao trabalhar em um projeto de software, é importante estar ciente
 de todo o software e bibliotecas nos quais o projeto depende e
 listá-los explicitamente e sob um sistema de controle de versão
@@ -272,10 +272,10 @@ depois, na próxima vez em que trabalhar no projeto B!) O isolamento pode ser al
 </li>
 </ul>
 <section id="gerenciando-seus-ambientes">
-<h3>Gerenciando seus ambientes<a class="headerlink" href="#gerenciando-seus-ambientes" title="Link permanente para este cabeçalho">¶</a></h3>
+<h3>Gerenciando seus ambientes<a class="headerlink" href="#gerenciando-seus-ambientes" title="Link para este cabeçalho">¶</a></h3>
 </section>
 <section id="ambientes-virtuais">
-<span id="python"></span><h3>Ambientes virtuais<a class="headerlink" href="#ambientes-virtuais" title="Link permanente para este cabeçalho">¶</a></h3>
+<span id="python"></span><h3>Ambientes virtuais<a class="headerlink" href="#ambientes-virtuais" title="Link para este cabeçalho">¶</a></h3>
 <p>Um ambiente virtual em Python é um ambiente local e isolado no qual você pode instalar
 ou desinstalar pacotes do Python sem interferir no ambiente global (ou em outros ambientes virtuais).
 Ele geralmente fica em um diretório (a localização varia dependendo se você usa venv, conda ou poetry).
@@ -294,7 +294,7 @@ de ambiente em seu shell para que:</p>
 </ul>
 <p>Para executar experimentos dentro de um ambiente virtual, você pode simplesmente ativá-lo no script fornecido para <code class="docutils literal notranslate"><span class="pre">sbatch</span></code>.</p>
 <section id="pip-virtualenv">
-<h4>Pip/Virtualenv<a class="headerlink" href="#pip-virtualenv" title="Link permanente para este cabeçalho">¶</a></h4>
+<h4>Pip/Virtualenv<a class="headerlink" href="#pip-virtualenv" title="Link para este cabeçalho">¶</a></h4>
 <p>O Pip é o gerenciador de pacotes preferido para Python e cada cluster fornece
 diversas versões do Python por meio do módulo associado, que vem com o pip.
 Para instalar novos pacotes, você primeiro precisará criar um espaço pessoal
@@ -327,14 +327,14 @@ clusters da Digital Research Alliance do Canadá) é usar ambientes virtuais.</p
 </div>
 </section>
 <section id="conda">
-<h4>Conda<a class="headerlink" href="#conda" title="Link permanente para este cabeçalho">¶</a></h4>
+<h4>Conda<a class="headerlink" href="#conda" title="Link para este cabeçalho">¶</a></h4>
 <p>Outra solução para Python é usar o miniconda.
 <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">https://docs.conda.io/en/latest/miniconda.html</a> ou anaconda
 <a class="reference external" href="https://docs.anaconda.com">https://docs.anaconda.com</a></p>
 </section>
 </section>
 <section id="usando-modulos">
-<h3>Usando módulos<a class="headerlink" href="#usando-modulos" title="Link permanente para este cabeçalho">¶</a></h3>
+<h3>Usando módulos<a class="headerlink" href="#usando-modulos" title="Link para este cabeçalho">¶</a></h3>
 <p>Muito software, como Python e Conda, já está compilado e disponível no cluster por
 meio do comando <code class="docutils literal notranslate"><span class="pre">module</span></code> e seus subcomandos. Em particular, se você deseja usar
 o <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.7</span></code>, basta fazer:</p>
@@ -343,7 +343,7 @@ o <code class="docutils literal notranslate"><span class="pre">Python</span> <sp
 </div>
 </section>
 <section id="no-uso-de-conteineres">
-<h3>No uso de contêineres<a class="headerlink" href="#no-uso-de-conteineres" title="Link permanente para este cabeçalho">¶</a></h3>
+<h3>No uso de contêineres<a class="headerlink" href="#no-uso-de-conteineres" title="Link para este cabeçalho">¶</a></h3>
 <p>Outra opção para criar código portátil é: <a class="reference internal" href="Userguide_singularity_on_clusters.html#using-containers"><span class="std std-ref">Usando Conteiners no cluster</span></a>.</p>
 <dl class="simple">
 <dt>Containers são uma abordagem popular para implantar aplicativos, empacotando juntos muitas das dependências necessárias.</dt><dd><p>A ferramenta mais popular para isso é o <a class="reference external" href="https://www.docker.com/">Docker</a>.</p>
@@ -352,11 +352,11 @@ o <code class="docutils literal notranslate"><span class="pre">Python</span> <sp
 </section>
 </section>
 <section id="singularity">
-<h2>Singularity<a class="headerlink" href="#singularity" title="Link permanente para este cabeçalho">¶</a></h2>
+<h2>Singularity<a class="headerlink" href="#singularity" title="Link para este cabeçalho">¶</a></h2>
 <section id="visao-geral">
-<h3>Visão Geral<a class="headerlink" href="#visao-geral" title="Link permanente para este cabeçalho">¶</a></h3>
+<h3>Visão Geral<a class="headerlink" href="#visao-geral" title="Link para este cabeçalho">¶</a></h3>
 <section id="o-que-e-singularidade">
-<h4>O que é singularidade<a class="headerlink" href="#o-que-e-singularidade" title="Link permanente para este cabeçalho">¶</a></h4>
+<h4>O que é singularidade<a class="headerlink" href="#o-que-e-singularidade" title="Link para este cabeçalho">¶</a></h4>
 <p>Executar o Docker no SLURM é um problema de segurança (por exemplo, executando como root,
 tendo a capacidade de montar qualquer diretório). A alternativa é usar o Singularity,
 que é uma solução popular no mundo de HPC.</p>
@@ -367,14 +367,14 @@ com o Singularity e podem ser usadas sem atrito, mas as coisas ficam complicadas
 tentamos converter nossos próprios arquivos de construção do Docker em receitas do Singularity.</p>
 </section>
 <section id="links-para-documentacao-oficial">
-<h4>Links para documentação oficial<a class="headerlink" href="#links-para-documentacao-oficial" title="Link permanente para este cabeçalho">¶</a></h4>
+<h4>Links para documentação oficial<a class="headerlink" href="#links-para-documentacao-oficial" title="Link para este cabeçalho">¶</a></h4>
 <ul class="simple">
 <li><p>official <a class="reference external" href="https://singularity-docs.readthedocs.io/en/latest/">Singularity user guide</a></p></li>
 <li><p>official <a class="reference external" href="https://sylabs.io/guides/latest/admin-guide/">Singularity admin guide</a></p></li>
 </ul>
 </section>
 <section id="visao-gerald-dos-passos-usados-na-pratica">
-<h4>Visão gerald dos passos usados na prática<a class="headerlink" href="#visao-gerald-dos-passos-usados-na-pratica" title="Link permanente para este cabeçalho">¶</a></h4>
+<h4>Visão gerald dos passos usados na prática<a class="headerlink" href="#visao-gerald-dos-passos-usados-na-pratica" title="Link para este cabeçalho">¶</a></h4>
 <p>Na maioria das vezes, o processo para criar e usar um contêiner Singularity é:</p>
 <ul class="simple">
 <li><p>No seu computador Linux (em casa ou no trabalho)</p>
@@ -398,7 +398,7 @@ faça outra coisa enquanto espera que eles terminem</p></li>
 <p>Nas próximas seções, você encontrará exemplos específicos ou dicas para realizar na prática as etapas destacadas acima.</p>
 </section>
 <section id="nao-nao-no-macos">
-<h4>Não, não no MacOS<a class="headerlink" href="#nao-nao-no-macos" title="Link permanente para este cabeçalho">¶</a></h4>
+<h4>Não, não no MacOS<a class="headerlink" href="#nao-nao-no-macos" title="Link para este cabeçalho">¶</a></h4>
 <p>Singularity não funciona no MacOS, até a data desta escrita em 2021.
 Docker realmente não roda no MacOS, mas o Docker instala silenciosamente uma
 máquina virtual executando Linux, o que torna a experiência agradável,
@@ -407,7 +407,7 @@ e o usuário não precisa se preocupar com os detalhes de como o Docker faz isso
 embora tecnicamente seja possível executá-lo dentro de uma máquina virtual Linux no MacOS.</p>
 </section>
 <section id="onde-construir-imagens">
-<h4>Onde construir imagens<a class="headerlink" href="#onde-construir-imagens" title="Link permanente para este cabeçalho">¶</a></h4>
+<h4>Onde construir imagens<a class="headerlink" href="#onde-construir-imagens" title="Link para este cabeçalho">¶</a></h4>
 <p>Construir imagens do Singularity é uma tarefa bastante pesada, que pode levar 20 minutos
 se você tiver muitas etapas na sua receita. Isso torna uma tarefa ruim para rodar em
 os nós de login de nossos clusters, especialmente se precisar ser executado regularmente.</p>
@@ -425,7 +425,7 @@ imagem do Singularity <code class="docutils literal notranslate"><span class="pr
 </section>
 </section>
 <section id="construindo-os-containers">
-<h3>Construindo os containers<a class="headerlink" href="#construindo-os-containers" title="Link permanente para este cabeçalho">¶</a></h3>
+<h3>Construindo os containers<a class="headerlink" href="#construindo-os-containers" title="Link para este cabeçalho">¶</a></h3>
 <p>Construir um container é como criar um novo ambiente, exceto que os containers são
 muito mais poderosos, pois são sistemas autocontidos. Com o Singularity, existem
 duas maneiras de construir containers.</p>
@@ -440,7 +440,7 @@ Nos referiremos a este procedimento como singularity sandboxes.</p>
 que precisa, envia para o Singularity e ele instalará tudo para você. Essas listas são chamadas de
 singularity recipes.</p>
 <section id="primeira-maneira-construir-e-usar-um-sandbox">
-<h4>Primeira maneira: construir e usar um sandbox<a class="headerlink" href="#primeira-maneira-construir-e-usar-um-sandbox" title="Link permanente para este cabeçalho">¶</a></h4>
+<h4>Primeira maneira: construir e usar um sandbox<a class="headerlink" href="#primeira-maneira-construir-e-usar-um-sandbox" title="Link para este cabeçalho">¶</a></h4>
 <p>Você pode se perguntar: <em>Em qual máquina devo construir um container?</em></p>
 <p>Antes de tudo, você precisa escolher onde construirá o seu container. Essa
 operação requer muita <strong>memória e alto uso da CPU</strong>.</p>
@@ -478,7 +478,7 @@ Singularity localmente:</p>
 </li>
 </ul>
 <section id="baixando-containers-da-web">
-<h5>Baixando containers da web.<a class="headerlink" href="#baixando-containers-da-web" title="Link permanente para este cabeçalho">¶</a></h5>
+<h5>Baixando containers da web.<a class="headerlink" href="#baixando-containers-da-web" title="Link para este cabeçalho">¶</a></h5>
 <p>Felizmente, você pode não precisar criar containers do zero, pois muitos já foram
 construídos para os softwares de deep learning mais comuns. Você pode encontrá-los
 na maioria em <a class="reference external" href="https://hub.docker.com/">dockerhub</a>.</p>
@@ -498,7 +498,7 @@ será usado como exemplo. Se você estiver usando o TensorFlow, simplesmente sub
 todas as ocorrências de <strong>pytorch</strong> por <strong>tensorflow</strong>.</p>
 </section>
 <section id="como-adicionar-ou-instalar-coisas-em-um-container">
-<h5>Como adicionar ou instalar coisas em um container<a class="headerlink" href="#como-adicionar-ou-instalar-coisas-em-um-container" title="Link permanente para este cabeçalho">¶</a></h5>
+<h5>Como adicionar ou instalar coisas em um container<a class="headerlink" href="#como-adicionar-ou-instalar-coisas-em-um-container" title="Link para este cabeçalho">¶</a></h5>
 <p>O primeiro passo é transformar o seu container somente leitura
 <code class="docutils literal notranslate"><span class="pre">pytorch-1.0.1-cuda10.0-cudnn7-runtime.simg</span></code> em uma versão gravável que
 permitirá que você adicione pacotes.</p>
@@ -530,7 +530,7 @@ diretório <code class="docutils literal notranslate"><span class="pre">$HOME</s
 <p>Você deve instalar seus pacotes em /usr/local.</p>
 </section>
 <section id="criando-diretorios-uteis">
-<h5>Criando diretórios úteis<a class="headerlink" href="#criando-diretorios-uteis" title="Link permanente para este cabeçalho">¶</a></h5>
+<h5>Criando diretórios úteis<a class="headerlink" href="#criando-diretorios-uteis" title="Link para este cabeçalho">¶</a></h5>
 <p>Um dos benefícios dos containers é que você poderá usá-los em diferentes clusters.
 No entanto, para cada cluster, a localização das pastas de datasets e experimentos
 pode ser diferente. Para ser invariante em relação a essas localizações, criaremos
@@ -545,7 +545,7 @@ seu conjunto de dados ao escrever seu código. Seu conjunto de dados estará sem
 em <code class="docutils literal notranslate"><span class="pre">/dataset</span></code>, independentemente do cluster que você estiver usando.</p>
 </section>
 <section id="testes">
-<h5>Testes<a class="headerlink" href="#testes" title="Link permanente para este cabeçalho">¶</a></h5>
+<h5>Testes<a class="headerlink" href="#testes" title="Link para este cabeçalho">¶</a></h5>
 <p>Se você tem algum código que deseja testar antes de finalizar o seu contêiner,
 você tem duas opções. Você pode entrar no seu contêiner e executar o código
 Python dentro dele com:</p>
@@ -566,7 +566,7 @@ Python dentro dele com:</p>
 </div>
 </section>
 <section id="criando-uma-nova-imagem-a-partir-do-sandbox">
-<h5>Criando uma nova imagem a partir do sandbox<a class="headerlink" href="#criando-uma-nova-imagem-a-partir-do-sandbox" title="Link permanente para este cabeçalho">¶</a></h5>
+<h5>Criando uma nova imagem a partir do sandbox<a class="headerlink" href="#criando-uma-nova-imagem-a-partir-do-sandbox" title="Link para este cabeçalho">¶</a></h5>
 <p>Depois que tudo o que você precisa estiver instalado dentro do contêiner,
 você precisa convertê-lo de volta em uma imagem singularity somente leitura com:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">singularity build pytorch_final.simg pytorch</span>
@@ -575,7 +575,7 @@ você precisa convertê-lo de volta em uma imagem singularity somente leitura co
 </section>
 </section>
 <section id="segunda-opcao-use-receitas">
-<span id="recipe-section"></span><h4>Segunda opção: Use receitas<a class="headerlink" href="#segunda-opcao-use-receitas" title="Link permanente para este cabeçalho">¶</a></h4>
+<span id="recipe-section"></span><h4>Segunda opção: Use receitas<a class="headerlink" href="#segunda-opcao-use-receitas" title="Link para este cabeçalho">¶</a></h4>
 <p>Uma receita do Singularity é um arquivo que inclui especificações sobre a instalação
 de software, variáveis de ambiente, arquivos a serem adicionados e metadados do contêiner.
 É um ponto de partida para projetar qualquer contêiner personalizado. Em vez de baixar um
@@ -626,7 +626,7 @@ Como não há acesso ao sudo no cluster, é necessário um computador pessoal ou
 hub para construir um contêiner.</p>
 </div>
 <section id="construir-receita-no-singularity-hub">
-<h5>Construir receita no Singularity Hub<a class="headerlink" href="#construir-receita-no-singularity-hub" title="Link permanente para este cabeçalho">¶</a></h5>
+<h5>Construir receita no Singularity Hub<a class="headerlink" href="#construir-receita-no-singularity-hub" title="Link para este cabeçalho">¶</a></h5>
 <p>O Singularity Hub permite que os usuários criem contêineres a partir de receitas
 diretamente na nuvem do Singularity Hub, o que significa que você não precisa criar
 contêineres sozinho. Você precisa se registrar no <a class="reference external" href="https://www.singularity-hub.org/">singularity-hub</a> e vincular sua conta
@@ -661,7 +661,7 @@ e você poderá baixá-lo do site ou diretamente usando:</p>
 </div>
 </section>
 <section id="exemplo-receita-com-openai-gym-mujoco-e-miniworld">
-<h5>Exemplo: Receita com OpenAI gym, MuJoCo e Miniworld<a class="headerlink" href="#exemplo-receita-com-openai-gym-mujoco-e-miniworld" title="Link permanente para este cabeçalho">¶</a></h5>
+<h5>Exemplo: Receita com OpenAI gym, MuJoCo e Miniworld<a class="headerlink" href="#exemplo-receita-com-openai-gym-mujoco-e-miniworld" title="Link para este cabeçalho">¶</a></h5>
 <p>Aqui está um exemplo de como você pode usar uma receita do Singularity
 para instalar um ambiente complexo como o OpenAI gym, MuJoCo e Miniworld
 em um contêiner baseado em PyTorch.</p>
@@ -828,9 +828,9 @@ em um contêiner baseado em PyTorch.</p>
 </section>
 </section>
 <section id="usando-conteiners-no-cluster">
-<span id="using-containers"></span><h3>Usando Conteiners no cluster<a class="headerlink" href="#usando-conteiners-no-cluster" title="Link permanente para este cabeçalho">¶</a></h3>
+<span id="using-containers"></span><h3>Usando Conteiners no cluster<a class="headerlink" href="#usando-conteiners-no-cluster" title="Link para este cabeçalho">¶</a></h3>
 <section id="como-usar-conteiners-no-cluster">
-<h4>Como usar conteiners no cluster<a class="headerlink" href="#como-usar-conteiners-no-cluster" title="Link permanente para este cabeçalho">¶</a></h4>
+<h4>Como usar conteiners no cluster<a class="headerlink" href="#como-usar-conteiners-no-cluster" title="Link para este cabeçalho">¶</a></h4>
 <p>Em todo cluster com Slurm, os conjuntos de dados e resultados intermediários
 devem ser armazenados em <code class="docutils literal notranslate"><span class="pre">$SLURM_TMPDIR</span></code>, enquanto os resultados finais do
 experimento devem ser salvos em <code class="docutils literal notranslate"><span class="pre">$SCRATCH</span></code>. Para usar o contêiner que você criou,
@@ -872,7 +872,7 @@ tem seu código em <code class="docutils literal notranslate"><span class="pre">
 </pre></div>
 </div>
 <section id="exemplo-caso-interativo-srun-salloc">
-<h5>Exemplo: Caso interativo (srun/salloc)<a class="headerlink" href="#exemplo-caso-interativo-srun-salloc" title="Link permanente para este cabeçalho">¶</a></h5>
+<h5>Exemplo: Caso interativo (srun/salloc)<a class="headerlink" href="#exemplo-caso-interativo-srun-salloc" title="Link para este cabeçalho">¶</a></h5>
 <p>Depois de obter uma sessão interativa com o SLURM, copie <code class="docutils literal notranslate"><span class="pre">&lt;YOUR_CONTAINER&gt;</span></code> e
 <code class="docutils literal notranslate"><span class="pre">&lt;YOUR_DATASET&gt;</span></code> para <code class="docutils literal notranslate"><span class="pre">$SLURM_TMPDIR</span></code>.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span><span class="m">0</span>.<span class="w"> </span>Get<span class="w"> </span>an<span class="w"> </span>interactive<span class="w"> </span>session
@@ -909,12 +909,12 @@ tem seu código em <code class="docutils literal notranslate"><span class="pre">
 </pre></div>
 </div>
 <p>Você também pode criar o seguinte alias para facilitar sua vida:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span>alias my_env=&#39;singularity exec --nv \
-        -H $HOME:/home \
-        -B $SLURM_TMPDIR:/dataset/ \
-        -B $SLURM_TMPDIR:/tmp_log/ \
-        -B $SCRATCH:/final_log/ \
-        $SLURM_TMPDIR/&lt;YOUR_CONTAINER&gt;&#39;
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">alias my_env=&#39;singularity exec --nv \</span>
+<span class="go">        -H $HOME:/home \</span>
+<span class="go">        -B $SLURM_TMPDIR:/dataset/ \</span>
+<span class="go">        -B $SLURM_TMPDIR:/tmp_log/ \</span>
+<span class="go">        -B $SCRATCH:/final_log/ \</span>
+<span class="gp">        $</span>SLURM_TMPDIR/&lt;YOUR_CONTAINER&gt;<span class="err">&#39;</span>
 </pre></div>
 </div>
 <p>Isso permitirá que você execute qualquer código com:</p>
@@ -923,7 +923,7 @@ tem seu código em <code class="docutils literal notranslate"><span class="pre">
 </div>
 </section>
 <section id="exemplo-caso-sbatch">
-<h5>Exemplo: caso sbatch<a class="headerlink" href="#exemplo-caso-sbatch" title="Link permanente para este cabeçalho">¶</a></h5>
+<h5>Exemplo: caso sbatch<a class="headerlink" href="#exemplo-caso-sbatch" title="Link para este cabeçalho">¶</a></h5>
 <p>Você também pode criar um script <code class="docutils literal notranslate"><span class="pre">sbatch</span></code>:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>!/bin/bash
 <span class="gp">#</span>SBATCH<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">6</span><span class="w">         </span><span class="c1"># Ask for 6 CPUs</span>
@@ -949,7 +949,7 @@ tem seu código em <code class="docutils literal notranslate"><span class="pre">
 </div>
 </section>
 <section id="problema-com-as-bibliotecas-pybullet-e-opengl">
-<h5>Problema com as bibliotecas PyBullet e OpenGL<a class="headerlink" href="#problema-com-as-bibliotecas-pybullet-e-opengl" title="Link permanente para este cabeçalho">¶</a></h5>
+<h5>Problema com as bibliotecas PyBullet e OpenGL<a class="headerlink" href="#problema-com-as-bibliotecas-pybullet-e-opengl" title="Link para este cabeçalho">¶</a></h5>
 <p>Se você estiver executando certos ambientes do gym que requerem o <code class="docutils literal notranslate"><span class="pre">pyglet</span></code>,
 você pode encontrar um problema ao executar sua instância do singularity
 com os drivers Nvidia usando a flag <code class="docutils literal notranslate"><span class="pre">--nv</span></code>. Isso acontece porque a flag <code class="docutils literal notranslate"><span class="pre">--nv</span></code>
@@ -969,7 +969,7 @@ seu <code class="docutils literal notranslate"><span class="pre">LD_LIBRARY_PATH
 </div>
 </section>
 <section id="apuana-cluster">
-<h5>Apuana cluster<a class="headerlink" href="#apuana-cluster" title="Link permanente para este cabeçalho">¶</a></h5>
+<h5>Apuana cluster<a class="headerlink" href="#apuana-cluster" title="Link para este cabeçalho">¶</a></h5>
 <p>No cluster Apuana, <code class="docutils literal notranslate"><span class="pre">$SCRATCH</span></code> ainda não está definido, você deve adicionar os
 resultados do experimento que deseja manter em <code class="docutils literal notranslate"><span class="pre">/network/scratch/&lt;u&gt;/&lt;username&gt;/</span></code>.
 Para usar o script sbatch acima e para corresponder a outros nomes de ambiente de
@@ -983,7 +983,7 @@ cluster, você pode definir <code class="docutils literal notranslate"><span cla
 </section>
 </section>
 <section id="compartilhando-dados-com-acls">
-<h2>Compartilhando dados com ACLs<a class="headerlink" href="#compartilhando-dados-com-acls" title="Link permanente para este cabeçalho">¶</a></h2>
+<h2>Compartilhando dados com ACLs<a class="headerlink" href="#compartilhando-dados-com-acls" title="Link para este cabeçalho">¶</a></h2>
 <p>Os bits de permissão regulares são ferramentas extremamente limitadas: eles controlam
 o acesso por meio de apenas três conjuntos de bits - usuário proprietário, grupo
 proprietário e todos os outros. Portanto, o acesso é ou muito restrito
@@ -1090,7 +1090,7 @@ de acesso, considere os seguintes comandos de visualização de documentação:<
 </ul>
 </div>
 <section id="visualizando-e-verificando-acls">
-<h3>Visualizando e Verificando ACLs<a class="headerlink" href="#visualizando-e-verificando-acls" title="Link permanente para este cabeçalho">¶</a></h3>
+<h3>Visualizando e Verificando ACLs<a class="headerlink" href="#visualizando-e-verificando-acls" title="Link para este cabeçalho">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">getfacl /path/to/folder/or/file</span>
 <span class="go">            1:  # file: somedir/</span>
 <span class="go">            2:  # owner: lisa</span>
@@ -1118,9 +1118,9 @@ de acesso, considere os seguintes comandos de visualização de documentação:<
 </section>
 </section>
 <section id="nos-multiplos">
-<h2>Nós Múltiplos<a class="headerlink" href="#nos-multiplos" title="Link permanente para este cabeçalho">¶</a></h2>
+<h2>Nós Múltiplos<a class="headerlink" href="#nos-multiplos" title="Link para este cabeçalho">¶</a></h2>
 <section id="paralelismo-de-dados">
-<h3>Paralelismo de Dados<a class="headerlink" href="#paralelismo-de-dados" title="Link permanente para este cabeçalho">¶</a></h3>
+<h3>Paralelismo de Dados<a class="headerlink" href="#paralelismo-de-dados" title="Link para este cabeçalho">¶</a></h3>
 <img alt="../_images/dataparallel.png" src="../_images/dataparallel.png" />
 <p>Solicite 3 nós com pelo menos 4 GPUs cada um.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>!/bin/bash
@@ -1164,28 +1164,28 @@ de acesso, considere os seguintes comandos de visualização de documentação:<
 </pre></div>
 </div>
 <p>Você pode encontrar abaixo um esboço de um script do PyTorch sobre como um treinador multi-nó pode ser elaborado.</p>
-<div class="highlight-python notranslate" id="training-script-outline-for-multi-node-training"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">torch.distributed</span> <span class="k">as</span> <span class="nn">dist</span>
+<div class="highlight-python notranslate" id="training-script-outline-for-multi-node-training"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.distributed</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dist</span>
 
-<span class="k">class</span> <span class="nc">Trainer</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Trainer</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">local_rank</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">chk_path</span> <span class="o">=</span> <span class="o">...</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="o">...</span>
 
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">device_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">device_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">local_rank</span>
 
-    <span class="k">def</span> <span class="nf">load_checkpoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">load_checkpoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">chk_path</span> <span class="o">=</span> <span class="n">path</span>
         <span class="c1"># ...</span>
 
-    <span class="k">def</span> <span class="nf">should_checkpoint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">should_checkpoint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># Note: only one worker saves its weights</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">global_rank</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">local_rank</span> <span class="o">==</span> <span class="mi">0</span>
 
-    <span class="k">def</span> <span class="nf">save_checkpoint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">save_checkpoint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">chk_path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span>
 
@@ -1193,7 +1193,7 @@ de acesso, considere os seguintes comandos de visualização de documentação:<
         <span class="c1"># Note: you should save the weights of self.model not ddp_model</span>
         <span class="c1"># ...</span>
 
-    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">initialize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">global_rank</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;RANK&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">local_rank</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;LOCAL_RANK&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
 
@@ -1202,7 +1202,7 @@ de acesso, considere os seguintes comandos de visualização de documentação:<
 
         <span class="n">dist</span><span class="o">.</span><span class="n">init_process_group</span><span class="p">(</span><span class="n">backend</span><span class="o">=</span><span class="s2">&quot;gloo|nccl&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">sync_weights</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resuming</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">sync_weights</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resuming</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">resuming</span><span class="p">:</span>
             <span class="c1"># in the case of resuming all workers need to load the same checkpoint</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">load_checkpoint</span><span class="p">()</span>
@@ -1226,7 +1226,7 @@ de acesso, considere os seguintes comandos de visualização de documentação:<
         <span class="c1"># Leader waits for the follower to load the weights</span>
         <span class="n">dist</span><span class="o">.</span><span class="n">barrier</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">):</span>
         <span class="n">train_sampler</span> <span class="o">=</span> <span class="n">ElasticDistributedSampler</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
         <span class="n">train_loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span>
             <span class="n">dataset</span><span class="p">,</span>
@@ -1237,12 +1237,12 @@ de acesso, considere os seguintes comandos de visualização de documentação:<
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">train_loader</span>
 
-    <span class="k">def</span> <span class="nf">train_step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">train_step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># Your batch processing step here</span>
         <span class="c1"># ...</span>
         <span class="k">pass</span>
 
-    <span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">sync_weights</span><span class="p">()</span>
 
         <span class="n">ddp_model</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">parallel</span><span class="o">.</span><span class="n">DistributedDataParallel</span><span class="p">(</span>
@@ -1260,7 +1260,7 @@ de acesso, considere os seguintes comandos de visualização de documentação:<
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">should_checkpoint</span><span class="p">():</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">save_checkpoint</span><span class="p">()</span>
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="n">trainer</span> <span class="o">=</span> <span class="n">Trainer</span><span class="p">()</span>
     <span class="n">trainer</span><span class="o">.</span><span class="n">load_checkpoint</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
     <span class="n">tainer</span><span class="o">.</span><span class="n">initialize</span><span class="p">()</span>
@@ -1283,10 +1283,10 @@ significa que pelo menos 12 processos são criados, pelo menos 4 em cada nó.”
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
-              <img class="logo" src="../_static/cin-logo.png" alt="Logo"/>
+              <img class="logo" src="../_static/cin-logo.png" alt="Logo de Cluster Cin"/>
             </a></p>
   <div>
     <h3><a href="../index.html">Tabela de Conteúdo</a></h3>
@@ -1374,6 +1374,11 @@ significa que pelo menos 12 processos são criados, pelo menos 4 em cada nó.”
     <p class="topless"><a href="../information.html"
                           title="capítulo anterior">Infraestrutura de computação e políticas</a></p>
   </div>
+  <div>
+    <h4>Próximo tópico</h4>
+    <p class="topless"><a href="../dashboard.html"
+                          title="próximo capítulo">Dashboard</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>Essa Página</h3>
     <ul class="this-page-menu">
@@ -1381,7 +1386,7 @@ significa que pelo menos 12 processos são criados, pelo menos 4 em cada nó.”
             rel="nofollow">Exibir Fonte</a></li>
     </ul>
    </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Busca rápida</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
@@ -1389,28 +1394,31 @@ significa que pelo menos 12 processos são criados, pelo menos 4 em cada nó.”
       <input type="submit" value="Ir" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navegação</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="Índice Geral"
              >índice</a></li>
         <li class="right" >
+          <a href="../dashboard.html" title="Dashboard"
+             >próximo</a> |</li>
+        <li class="right" >
           <a href="../information.html" title="Infraestrutura de computação e políticas"
              >anterior</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">documentação Cluster Cin latest</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentação Cluster Cin latest</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Guia do usuário</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023.
-      Criada usando <a href="https://www.sphinx-doc.org/pt_BR/master">Sphinx</a> 5.3.0.
+    &#169; Copyright 2025.
+      Criada usando <a href="https://www.sphinx-doc.org/pt_BR/master">Sphinx</a> 8.2.3.
     </div>
   </body>
 </html>
