@@ -85,7 +85,28 @@ clusters da Digital Research Alliance do Canadá) é usar ambientes virtuais.</p
 </section>
 <section id="conda">
 <h2>Conda<a class="headerlink" href="#conda" title="Link para este cabeçalho">¶</a></h2>
-<p>Outra solução para Python é usar o miniconda.
+<p>Outra solução para Python é usar o conda.</p>
+<p>Você pode carregar o módulo do conda com o seguinte comando:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">module load miniforge3/2025.07</span>
+</pre></div>
+</div>
+<p>Para verificar a versão do conda instalada, use:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conda --version</span>
+</pre></div>
+</div>
+<p>Para criar um novo ambiente conda, use o seguinte comando:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conda create --n &lt;env&gt; python=&lt;version&gt; -y</span>
+</pre></div>
+</div>
+<p>Finalmente, para ativar o ambiente, use:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conda activate &lt;env&gt;</span>
+</pre></div>
+</div>
+<p>E para desativar o ambiente:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conda deactivate</span>
+</pre></div>
+</div>
+<p>Outras informações também podem ser encontradas em:
 <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">https://docs.conda.io/en/latest/miniconda.html</a> ou anaconda
 <a class="reference external" href="https://docs.anaconda.com">https://docs.anaconda.com</a></p>
 </section>

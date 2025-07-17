@@ -328,7 +328,28 @@ clusters da Digital Research Alliance do Canadá) é usar ambientes virtuais.</p
 </section>
 <section id="conda">
 <h4>Conda<a class="headerlink" href="#conda" title="Link para este cabeçalho">¶</a></h4>
-<p>Outra solução para Python é usar o miniconda.
+<p>Outra solução para Python é usar o conda.</p>
+<p>Você pode carregar o módulo do conda com o seguinte comando:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">module load miniforge3/2025.07</span>
+</pre></div>
+</div>
+<p>Para verificar a versão do conda instalada, use:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conda --version</span>
+</pre></div>
+</div>
+<p>Para criar um novo ambiente conda, use o seguinte comando:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conda create --n &lt;env&gt; python=&lt;version&gt; -y</span>
+</pre></div>
+</div>
+<p>Finalmente, para ativar o ambiente, use:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conda activate &lt;env&gt;</span>
+</pre></div>
+</div>
+<p>E para desativar o ambiente:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conda deactivate</span>
+</pre></div>
+</div>
+<p>Outras informações também podem ser encontradas em:
 <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">https://docs.conda.io/en/latest/miniconda.html</a> ou anaconda
 <a class="reference external" href="https://docs.anaconda.com">https://docs.anaconda.com</a></p>
 </section>
@@ -344,7 +365,7 @@ o <code class="docutils literal notranslate"><span class="pre">Python</span> <sp
 </section>
 <section id="no-uso-de-conteineres">
 <h3>No uso de contêineres<a class="headerlink" href="#no-uso-de-conteineres" title="Link para este cabeçalho">¶</a></h3>
-<p>Outra opção para criar código portátil é: <a class="reference internal" href="Userguide_singularity_on_clusters.html#using-containers"><span class="std std-ref">Usando Conteiners no cluster</span></a>.</p>
+<p>Outra opção para criar código portátil é: <a class="reference internal" href="#using-containers"><span class="std std-ref">Usando Conteiners no cluster</span></a>.</p>
 <dl class="simple">
 <dt>Containers são uma abordagem popular para implantar aplicativos, empacotando juntos muitas das dependências necessárias.</dt><dd><p>A ferramenta mais popular para isso é o <a class="reference external" href="https://www.docker.com/">Docker</a>.</p>
 </dd>
