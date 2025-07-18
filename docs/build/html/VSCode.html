@@ -1,31 +1,27 @@
-
 <!DOCTYPE html>
 
-<html lang="pt-BR">
+<html lang="pt-BR" data-content_root="./">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Visual Studio Code &#8212; documentação Cluster Cin latest</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/groundwork.css" />
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/translations.js"></script>
+    <title>Visual Studio Code &#8212; Documentação Cluster Cin latest</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/groundwork.css?v=594d7a89" />
+    <script src="_static/documentation_options.js?v=3ccd3dfb"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=71a39b36"></script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Buscar" href="search.html" /> 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navegação</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="Índice Geral"
              accesskey="I">índice</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">documentação Cluster Cin latest</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Documentação Cluster Cin latest</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Visual Studio Code</a></li> 
       </ul>
     </div>  
@@ -36,13 +32,13 @@
           <div class="body" role="main">
             
   <section id="visual-studio-code">
-<h1>Visual Studio Code<a class="headerlink" href="#visual-studio-code" title="Link permanente para este cabeçalho">¶</a></h1>
+<h1>Visual Studio Code<a class="headerlink" href="#visual-studio-code" title="Link para este cabeçalho">¶</a></h1>
 <p>One editor of choice for many researchers is VSCode. One feature of VSCode is
 remote editing through SSH. This allows you to edit files on the cluster as if
 they were local. You can also debug your programs using VSCode’s debugger, open
 terminal sessions, etc.</p>
 <section id="connecting-to-the-cluster">
-<h2>Connecting to the cluster<a class="headerlink" href="#connecting-to-the-cluster" title="Link permanente para este cabeçalho">¶</a></h2>
+<h2>Connecting to the cluster<a class="headerlink" href="#connecting-to-the-cluster" title="Link para este cabeçalho">¶</a></h2>
 <p>VSCode cannot be used to edit code on the login nodes, because it is a heavy
 enough process (a <code class="docutils literal notranslate"><span class="pre">node</span></code> process, plus the language server, linter, and
 possibly other plugins depending on your configured environment) that there is a
@@ -61,7 +57,7 @@ one of your running jobs, the <code class="docutils literal notranslate"><span c
 used.</p>
 </section>
 <section id="activating-an-environment">
-<h2>Activating an environment<a class="headerlink" href="#activating-an-environment" title="Link permanente para este cabeçalho">¶</a></h2>
+<h2>Activating an environment<a class="headerlink" href="#activating-an-environment" title="Link para este cabeçalho">¶</a></h2>
 <p><a class="reference external" href="https://code.visualstudio.com/docs/python/environments">Reference</a></p>
 <p>To activate a conda or pip environment, you can open the command palette with
 Ctrl+Shift+P and type “Python: Select interpreter”. This will prompt you for the
@@ -75,9 +71,9 @@ that same environment.</p>
 </div>
 </section>
 <section id="troubleshooting">
-<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link permanente para este cabeçalho">¶</a></h2>
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link para este cabeçalho">¶</a></h2>
 <section id="cannot-reconnect">
-<h3>“Cannot reconnect”<a class="headerlink" href="#cannot-reconnect" title="Link permanente para este cabeçalho">¶</a></h3>
+<h3>“Cannot reconnect”<a class="headerlink" href="#cannot-reconnect" title="Link para este cabeçalho">¶</a></h3>
 <p>When connecting to multiple compute nodes (and/or from multiple computers), some
 instances may crash with that message because of conflicts in the lock files
 VSCode installs in <code class="docutils literal notranslate"><span class="pre">~/.vscode-server</span></code> (which is shared on all compute nodes).
@@ -89,7 +85,7 @@ To fix this issue, you can change this setting in your <code class="docutils lit
 are local to the node).</p>
 </section>
 <section id="debugger-timeouts">
-<h3>Debugger timeouts<a class="headerlink" href="#debugger-timeouts" title="Link permanente para este cabeçalho">¶</a></h3>
+<h3>Debugger timeouts<a class="headerlink" href="#debugger-timeouts" title="Link para este cabeçalho">¶</a></h3>
 <p>Sometimes, slowness on the compute node or the networked filesystem might cause
 the VSCode debugger to timeout when starting a remote debug process. As a quick
 fix, you can add this to your <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> or <code class="docutils literal notranslate"><span class="pre">~/.profile</span></code> or equivalent
@@ -107,10 +103,10 @@ seconds:</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="index.html">
-              <img class="logo" src="_static/cin-logo.png" alt="Logo"/>
+              <img class="logo" src="_static/cin-logo.png" alt="Logo de Cluster Cin"/>
             </a></p>
   <div>
     <h3><a href="index.html">Tabela de Conteúdo</a></h3>
@@ -135,7 +131,7 @@ seconds:</p>
             rel="nofollow">Exibir Fonte</a></li>
     </ul>
    </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Busca rápida</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
@@ -143,25 +139,25 @@ seconds:</p>
       <input type="submit" value="Ir" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navegação</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="Índice Geral"
              >índice</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">documentação Cluster Cin latest</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Documentação Cluster Cin latest</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Visual Studio Code</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023.
-      Criada usando <a href="https://www.sphinx-doc.org/pt_BR/master">Sphinx</a> 5.3.0.
+    &#169; Copyright 2025.
+      Criada usando <a href="https://www.sphinx-doc.org/pt_BR/master">Sphinx</a> 8.2.3.
     </div>
   </body>
 </html>

@@ -51,7 +51,8 @@ Para acessar o cluster é necessário ter um login cin.ufpe.br e ter o acesso ha
 
    dashboard
 
+.. toctree::
+   :caption: FAQ
+   :maxdepth: 2
 
-
-
-   
+   faq

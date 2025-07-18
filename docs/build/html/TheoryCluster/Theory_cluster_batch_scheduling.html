@@ -1,31 +1,27 @@
-
 <!DOCTYPE html>
 
-<html lang="pt-BR">
+<html lang="pt-BR" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>O gerenciador de carga de trabalho &#8212; documentação Cluster Cin latest</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/groundwork.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/translations.js"></script>
+    <title>O gerenciador de carga de trabalho &#8212; Documentação Cluster Cin latest</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/groundwork.css?v=594d7a89" />
+    <script src="../_static/documentation_options.js?v=3ccd3dfb"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=71a39b36"></script>
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" /> 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navegação</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="Índice Geral"
              accesskey="I">índice</a></li>
-        <li class="nav-item nav-item-0"><a href="../index.html">documentação Cluster Cin latest</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentação Cluster Cin latest</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">O gerenciador de carga de trabalho</a></li> 
       </ul>
     </div>  
@@ -36,14 +32,14 @@
           <div class="body" role="main">
             
   <section id="o-gerenciador-de-carga-de-trabalho">
-<h1>O gerenciador de carga de trabalho<a class="headerlink" href="#o-gerenciador-de-carga-de-trabalho" title="Link permanente para este cabeçalho">¶</a></h1>
+<h1>O gerenciador de carga de trabalho<a class="headerlink" href="#o-gerenciador-de-carga-de-trabalho" title="Link para este cabeçalho">¶</a></h1>
 <p>Em um cluster, os usuários não têm acesso direto aos nós de computação,
 mas se conectam a um nó de login e adicionam trabalhos à fila do gerenciador
 de carga de trabalho. Sempre que houver recursos disponíveis para executar
 esses trabalhos, eles serão alocados para um nó de computação e executados,
 o que pode acontecer imediatamente ou após uma espera de vários dias.</p>
 <section id="anatomia-de-um-trabalho">
-<h2>Anatomia de um trabalho<a class="headerlink" href="#anatomia-de-um-trabalho" title="Link permanente para este cabeçalho">¶</a></h2>
+<h2>Anatomia de um trabalho<a class="headerlink" href="#anatomia-de-um-trabalho" title="Link para este cabeçalho">¶</a></h2>
 <p>Um trabalho consiste em uma série de etapas que serão executadas uma após a outra.
 Isso é feito para que você possa agendar uma sequência de processos que podem usar
 os resultados das etapas anteriores sem ter que interagir manualmente com o escalonador.</p>
@@ -65,7 +61,7 @@ provavelmente é melhor deixá-la para um framework fora do escopo do gerenciado
 É perfeitamente aceitável enviar trabalhos com uma única etapa, uma única tarefa e um único processo.</p>
 </section>
 <section id="compreendendo-a-fila">
-<h2>Compreendendo a fila<a class="headerlink" href="#compreendendo-a-fila" title="Link permanente para este cabeçalho">¶</a></h2>
+<h2>Compreendendo a fila<a class="headerlink" href="#compreendendo-a-fila" title="Link para este cabeçalho">¶</a></h2>
 <p>Os recursos disponíveis no cluster não são infinitos e é o trabalho do
 gerenciador de carga alocá-los. Sempre que uma solicitação de trabalho é feita
 e não há recursos suficientes disponíveis para iniciar imediatamente, ele
@@ -80,7 +76,7 @@ o gerenciador em que você pode ver o status dos trabalhos em fila e por que ele
 permanecem na fila.</p>
 </section>
 <section id="sobre-particoes">
-<h2>Sobre partições<a class="headerlink" href="#sobre-particoes" title="Link permanente para este cabeçalho">¶</a></h2>
+<h2>Sobre partições<a class="headerlink" href="#sobre-particoes" title="Link para este cabeçalho">¶</a></h2>
 <p>O gerenciador de carga irá dividir o cluster em partições de acordo com
 a configuração definida pelos administradores. Uma partição é um conjunto de
 máquinas geralmente reservadas para um propósito específico. Um exemplo pode
@@ -96,7 +92,7 @@ diferentes hardwares são misturados e nem todos os softwares são compatíveis 
 todos eles (por exemplo, CPUs x86 e POWER).</p>
 </section>
 <section id="ultrapassando-limites-preempcao-e-periodos-de-graca">
-<h2>Ultrapassando limites (preempção e períodos de graça)<a class="headerlink" href="#ultrapassando-limites-preempcao-e-periodos-de-graca" title="Link permanente para este cabeçalho">¶</a></h2>
+<h2>Ultrapassando limites (preempção e períodos de graça)<a class="headerlink" href="#ultrapassando-limites-preempcao-e-periodos-de-graca" title="Link para este cabeçalho">¶</a></h2>
 <p>Para garantir uma distribuição justa dos recursos de computação para todos,
 o gerenciador de carga estabelece limites na quantidade de recursos que um
 único usuário pode usar de uma só vez. Esses limites podem ser limites rígidos
@@ -120,7 +116,7 @@ trabalho fica indisponível. Para outros, como RAM, o uso é monitorado e seu tr
 encerrado se exceder o limite. Isso torna importante garantir que você estime com precisão o uso de recursos.</p>
 </section>
 <section id="informacoes-sobre-apuana">
-<h2>Informações sobre Apuana<a class="headerlink" href="#informacoes-sobre-apuana" title="Link permanente para este cabeçalho">¶</a></h2>
+<h2>Informações sobre Apuana<a class="headerlink" href="#informacoes-sobre-apuana" title="Link para este cabeçalho">¶</a></h2>
 <p>Comandos de cliente <strong>Slurm</strong> estão disponíveis nos nós de login para que você possa enviar
 trabalhos para o controlador principal e adicioná-los à fila. Existem dois tipos de trabalhos:
 trabalhos em <em>lote</em> (batch) e trabalhos <em>interativos</em> (interactive).</p>
@@ -132,10 +128,10 @@ trabalhos em <em>lote</em> (batch) e trabalhos <em>interativos</em> (interactive
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
-              <img class="logo" src="../_static/cin-logo.png" alt="Logo"/>
+              <img class="logo" src="../_static/cin-logo.png" alt="Logo de Cluster Cin"/>
             </a></p>
   <div>
     <h3><a href="../index.html">Tabela de Conteúdo</a></h3>
@@ -158,7 +154,7 @@ trabalhos em <em>lote</em> (batch) e trabalhos <em>interativos</em> (interactive
             rel="nofollow">Exibir Fonte</a></li>
     </ul>
    </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Busca rápida</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
@@ -166,25 +162,25 @@ trabalhos em <em>lote</em> (batch) e trabalhos <em>interativos</em> (interactive
       <input type="submit" value="Ir" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navegação</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="Índice Geral"
              >índice</a></li>
-        <li class="nav-item nav-item-0"><a href="../index.html">documentação Cluster Cin latest</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentação Cluster Cin latest</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">O gerenciador de carga de trabalho</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023.
-      Criada usando <a href="https://www.sphinx-doc.org/pt_BR/master">Sphinx</a> 5.3.0.
+    &#169; Copyright 2025.
+      Criada usando <a href="https://www.sphinx-doc.org/pt_BR/master">Sphinx</a> 8.2.3.
     </div>
   </body>
 </html>

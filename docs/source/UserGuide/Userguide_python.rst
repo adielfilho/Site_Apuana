@@ -63,6 +63,39 @@ Conda
 ^^^^^
 
 
-Outra solução para Python é usar o miniconda.
+Outra solução para Python é usar o conda.
+
+Você pode carregar o módulo do conda com o seguinte comando:
+
+.. code-block:: console
+
+    module load miniforge3/2025.07
+
+Para verificar a versão do conda instalada, use:
+
+.. code-block:: console
+
+    conda --version
+
+Para criar um novo ambiente conda, use o seguinte comando:
+
+.. code-block:: console
+
+    conda create --n <env> python=<version> -y
+
+Finalmente, para ativar o ambiente, use:
+
+.. code-block:: console
+
+    conda activate <env>
+
+E para desativar o ambiente:
+
+.. code-block:: console
+
+    conda deactivate
+
+
+Outras informações também podem ser encontradas em:
 `<https://docs.conda.io/en/latest/miniconda.html>`_ ou anaconda
 `<https://docs.anaconda.com>`_ 

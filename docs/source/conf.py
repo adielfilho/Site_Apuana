@@ -32,7 +32,7 @@ language = 'pt_BR'
 
 html_theme = 'groundwork'
 html_theme_path = ["."]
-html_static_path = ['../../docs/build/html/_static']
+html_static_path = ['/Users/paulaperazzo/Documents/apuana/Site_Apuana/docs/build/_static']
 
 #html_theme_path = [sphinx_theme.get_html_theme_path()]
-html_logo = '../../docs/source/cin-logo.png'
+html_logo = '/Users/paulaperazzo/Documents/apuana/Site_Apuana/docs/source/cin-logo.png'

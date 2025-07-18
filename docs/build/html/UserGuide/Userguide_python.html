@@ -1,31 +1,27 @@
-
 <!DOCTYPE html>
 
-<html lang="pt-BR">
+<html lang="pt-BR" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Ambientes virtuais &#8212; documentação Cluster Cin latest</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/groundwork.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/translations.js"></script>
+    <title>Ambientes virtuais &#8212; Documentação Cluster Cin latest</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/groundwork.css?v=594d7a89" />
+    <script src="../_static/documentation_options.js?v=3ccd3dfb"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=71a39b36"></script>
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" /> 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navegação</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="Índice Geral"
              accesskey="I">índice</a></li>
-        <li class="nav-item nav-item-0"><a href="../index.html">documentação Cluster Cin latest</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentação Cluster Cin latest</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Ambientes virtuais</a></li> 
       </ul>
     </div>  
@@ -36,7 +32,7 @@
           <div class="body" role="main">
             
   <section id="ambientes-virtuais">
-<span id="python"></span><h1>Ambientes virtuais<a class="headerlink" href="#ambientes-virtuais" title="Link permanente para este cabeçalho">¶</a></h1>
+<span id="python"></span><h1>Ambientes virtuais<a class="headerlink" href="#ambientes-virtuais" title="Link para este cabeçalho">¶</a></h1>
 <p>Um ambiente virtual em Python é um ambiente local e isolado no qual você pode instalar
 ou desinstalar pacotes do Python sem interferir no ambiente global (ou em outros ambientes virtuais).
 Ele geralmente fica em um diretório (a localização varia dependendo se você usa venv, conda ou poetry).
@@ -55,7 +51,7 @@ de ambiente em seu shell para que:</p>
 </ul>
 <p>Para executar experimentos dentro de um ambiente virtual, você pode simplesmente ativá-lo no script fornecido para <code class="docutils literal notranslate"><span class="pre">sbatch</span></code>.</p>
 <section id="pip-virtualenv">
-<h2>Pip/Virtualenv<a class="headerlink" href="#pip-virtualenv" title="Link permanente para este cabeçalho">¶</a></h2>
+<h2>Pip/Virtualenv<a class="headerlink" href="#pip-virtualenv" title="Link para este cabeçalho">¶</a></h2>
 <p>O Pip é o gerenciador de pacotes preferido para Python e cada cluster fornece
 diversas versões do Python por meio do módulo associado, que vem com o pip.
 Para instalar novos pacotes, você primeiro precisará criar um espaço pessoal
@@ -88,8 +84,29 @@ clusters da Digital Research Alliance do Canadá) é usar ambientes virtuais.</p
 </div>
 </section>
 <section id="conda">
-<h2>Conda<a class="headerlink" href="#conda" title="Link permanente para este cabeçalho">¶</a></h2>
-<p>Outra solução para Python é usar o miniconda.
+<h2>Conda<a class="headerlink" href="#conda" title="Link para este cabeçalho">¶</a></h2>
+<p>Outra solução para Python é usar o conda.</p>
+<p>Você pode carregar o módulo do conda com o seguinte comando:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">module load miniforge3/2025.07</span>
+</pre></div>
+</div>
+<p>Para verificar a versão do conda instalada, use:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conda --version</span>
+</pre></div>
+</div>
+<p>Para criar um novo ambiente conda, use o seguinte comando:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conda create --n &lt;env&gt; python=&lt;version&gt; -y</span>
+</pre></div>
+</div>
+<p>Finalmente, para ativar o ambiente, use:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conda activate &lt;env&gt;</span>
+</pre></div>
+</div>
+<p>E para desativar o ambiente:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conda deactivate</span>
+</pre></div>
+</div>
+<p>Outras informações também podem ser encontradas em:
 <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">https://docs.conda.io/en/latest/miniconda.html</a> ou anaconda
 <a class="reference external" href="https://docs.anaconda.com">https://docs.anaconda.com</a></p>
 </section>
@@ -100,10 +117,10 @@ clusters da Digital Research Alliance do Canadá) é usar ambientes virtuais.</p
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
-              <img class="logo" src="../_static/cin-logo.png" alt="Logo"/>
+              <img class="logo" src="../_static/cin-logo.png" alt="Logo de Cluster Cin"/>
             </a></p>
   <div>
     <h3><a href="../index.html">Tabela de Conteúdo</a></h3>
@@ -123,7 +140,7 @@ clusters da Digital Research Alliance do Canadá) é usar ambientes virtuais.</p
             rel="nofollow">Exibir Fonte</a></li>
     </ul>
    </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Busca rápida</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
@@ -131,25 +148,25 @@ clusters da Digital Research Alliance do Canadá) é usar ambientes virtuais.</p
       <input type="submit" value="Ir" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navegação</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="Índice Geral"
              >índice</a></li>
-        <li class="nav-item nav-item-0"><a href="../index.html">documentação Cluster Cin latest</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentação Cluster Cin latest</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Ambientes virtuais</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023.
-      Criada usando <a href="https://www.sphinx-doc.org/pt_BR/master">Sphinx</a> 5.3.0.
+    &#169; Copyright 2025.
+      Criada usando <a href="https://www.sphinx-doc.org/pt_BR/master">Sphinx</a> 8.2.3.
     </div>
   </body>
 </html>

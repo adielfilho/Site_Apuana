@@ -1,31 +1,27 @@
-
 <!DOCTYPE html>
 
-<html lang="pt-BR">
+<html lang="pt-BR" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Executando o seu código &#8212; documentação Cluster Cin latest</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/groundwork.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/translations.js"></script>
+    <title>Executando o seu código &#8212; Documentação Cluster Cin latest</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/groundwork.css?v=594d7a89" />
+    <script src="../_static/documentation_options.js?v=3ccd3dfb"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=71a39b36"></script>
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" /> 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navegação</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="Índice Geral"
              accesskey="I">índice</a></li>
-        <li class="nav-item nav-item-0"><a href="../index.html">documentação Cluster Cin latest</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentação Cluster Cin latest</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Executando o seu código</a></li> 
       </ul>
     </div>  
@@ -36,20 +32,20 @@
           <div class="body" role="main">
             
   <section id="executando-o-seu-codigo">
-<h1>Executando o seu código<a class="headerlink" href="#executando-o-seu-codigo" title="Link permanente para este cabeçalho">¶</a></h1>
+<h1>Executando o seu código<a class="headerlink" href="#executando-o-seu-codigo" title="Link para este cabeçalho">¶</a></h1>
 <section id="guia-de-comandos-slurm">
-<h2>Guia de comandos SLURM<a class="headerlink" href="#guia-de-comandos-slurm" title="Link permanente para este cabeçalho">¶</a></h2>
+<h2>Guia de comandos SLURM<a class="headerlink" href="#guia-de-comandos-slurm" title="Link para este cabeçalho">¶</a></h2>
 <section id="uso-basico">
-<h3>Uso básico<a class="headerlink" href="#uso-basico" title="Link permanente para este cabeçalho">¶</a></h3>
+<h3>Uso básico<a class="headerlink" href="#uso-basico" title="Link para este cabeçalho">¶</a></h3>
 <p>A documentação do SLURM <a class="reference external" href="https://slurm.schedmd.com/documentation.html">https://slurm.schedmd.com/documentation.html</a>
 fornece informações extensas sobre os comandos disponíveis para consultar o
 status do cluster ou enviar trabalhos.</p>
 <p>A seguir, são apresentados alguns exemplos básicos de como usar o SLURM.</p>
 </section>
 <section id="enviando-trabalhos">
-<h3>Enviando trabalhos<a class="headerlink" href="#enviando-trabalhos" title="Link permanente para este cabeçalho">¶</a></h3>
+<h3>Enviando trabalhos<a class="headerlink" href="#enviando-trabalhos" title="Link para este cabeçalho">¶</a></h3>
 <section id="trabalho-em-lote">
-<h4>Trabalho em lote<a class="headerlink" href="#trabalho-em-lote" title="Link permanente para este cabeçalho">¶</a></h4>
+<h4>Trabalho em lote<a class="headerlink" href="#trabalho-em-lote" title="Link para este cabeçalho">¶</a></h4>
 <p>Para enviar um trabalho em lote, você precisa criar um script contendo o(s) comando(s) principal(is)
 que deseja executar nos recursos/nós alocados.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>!/bin/bash
@@ -77,7 +73,7 @@ com <code class="docutils literal notranslate"><span class="pre">sbatch</span></
 </div>
 </section>
 <section id="job-interativo">
-<h4>Job interativo<a class="headerlink" href="#job-interativo" title="Link permanente para este cabeçalho">¶</a></h4>
+<h4>Job interativo<a class="headerlink" href="#job-interativo" title="Link para este cabeçalho">¶</a></h4>
 <p>Os gerenciadores de carga geralmente executam trabalhos em lote para evitar ter que monitorar
 sua progressão e deixar o agendador executá-lo assim que os recursos estiverem disponíveis.
 Se você quiser acessar um shell enquanto utiliza recursos do cluster, pode enviar um trabalho
@@ -101,7 +97,7 @@ você quiser obter uma alocação em vários nós.</p>
 </section>
 </section>
 <section id="argumentos-de-submissao-de-tarefas">
-<h3>Argumentos de submissão de tarefas<a class="headerlink" href="#argumentos-de-submissao-de-tarefas" title="Link permanente para este cabeçalho">¶</a></h3>
+<h3>Argumentos de submissão de tarefas<a class="headerlink" href="#argumentos-de-submissao-de-tarefas" title="Link para este cabeçalho">¶</a></h3>
 <p>Para selecionar com precisão os recursos para sua tarefa, vários argumentos estão disponíveis. Os mais importantes são:</p>
 <table class="docutils align-default">
 <thead>
@@ -134,7 +130,7 @@ agendamento do seu trabalho (trabalhos pequenos sempre são executados primeiro)
 </div>
 </section>
 <section id="verificando-job-status">
-<h3>verificando job status<a class="headerlink" href="#verificando-job-status" title="Link permanente para este cabeçalho">¶</a></h3>
+<h3>verificando job status<a class="headerlink" href="#verificando-job-status" title="Link para este cabeçalho">¶</a></h3>
 <p>Para exibir os <em>jobs</em> atualmente na fila, use <code class="docutils literal notranslate"><span class="pre">squeue</span></code> e para obter apenas seus trabalhos digite squeue -u $USER</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>squeue<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span>
 <span class="go">JOBID   USER          NAME    ST  START_TIME         TIME NODES CPUS TRES_PER_NMIN_MEM NODELIST (REASON) COMMENT</span>
@@ -149,7 +145,7 @@ negadas até que os trabalhos existentes nesta associação sejam concluídos.</
 </div>
 </section>
 <section id="removendo-um-job">
-<h3>Removendo um job<a class="headerlink" href="#removendo-um-job" title="Link permanente para este cabeçalho">¶</a></h3>
+<h3>Removendo um job<a class="headerlink" href="#removendo-um-job" title="Link para este cabeçalho">¶</a></h3>
 <p>Para cancelar o seu trabalho, simplesmente use <code class="docutils literal notranslate"><span class="pre">scancel</span></code>.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">scancel 4323674</span>
 </pre></div>
@@ -157,7 +153,7 @@ negadas até que os trabalhos existentes nesta associação sejam concluídos.</
 </section>
 </section>
 <section id="particionamento">
-<h2>Particionamento<a class="headerlink" href="#particionamento" title="Link permanente para este cabeçalho">¶</a></h2>
+<h2>Particionamento<a class="headerlink" href="#particionamento" title="Link para este cabeçalho">¶</a></h2>
 <p>Como não temos muitas GPUs no cluster, os recursos devem ser compartilhados de forma justa.
 A opção <code class="docutils literal notranslate"><span class="pre">--partition=/-p</span></code> do SLURM permite que você defina a prioridade necessária para um trabalho.
 Cada trabalho atribuído com uma prioridade pode interromper trabalhos com prioridade mais baixa:
@@ -236,10 +232,10 @@ apenas com CPU, a partição será traduzida automaticamente para seu equivalent
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
-              <img class="logo" src="../_static/cin-logo.png" alt="Logo"/>
+              <img class="logo" src="../_static/cin-logo.png" alt="Logo de Cluster Cin"/>
             </a></p>
   <div>
     <h3><a href="../index.html">Tabela de Conteúdo</a></h3>
@@ -270,7 +266,7 @@ apenas com CPU, a partição será traduzida automaticamente para seu equivalent
             rel="nofollow">Exibir Fonte</a></li>
     </ul>
    </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Busca rápida</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
@@ -278,25 +274,25 @@ apenas com CPU, a partição será traduzida automaticamente para seu equivalent
       <input type="submit" value="Ir" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navegação</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="Índice Geral"
              >índice</a></li>
-        <li class="nav-item nav-item-0"><a href="../index.html">documentação Cluster Cin latest</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentação Cluster Cin latest</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Executando o seu código</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023.
-      Criada usando <a href="https://www.sphinx-doc.org/pt_BR/master">Sphinx</a> 5.3.0.
+    &#169; Copyright 2025.
+      Criada usando <a href="https://www.sphinx-doc.org/pt_BR/master">Sphinx</a> 8.2.3.
     </div>
   </body>
 </html>
