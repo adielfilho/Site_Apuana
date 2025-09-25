@@ -304,18 +304,46 @@ local do nó de computação
 Partições e limites de recursos
 ---------------------------------
 
-Atualmente o cluster contém duas partições: long e short. A partição
-long é a partição padrão e  é adequada para processar cargas com poucos
-recursos em longos períodos de tempo. Já a partição short é adequada
-para processar cargas com mais recursos, porém, em um menor período de
-tempo.
+Fairshare
+~~~~~~~~~~~~
 
-A partição long roda jobs por até 7 dias, onde cada job sofre preempção,
-se houver jobs na fila, a partir de 2 dias. A partição short roda jobs
-por até 2 dias, onde cada job sofre preempção, se houve jobs na fila, a
-partir de 2 horas de execução do job. A preempção é uma suspensão
-temporária que força jobs a voltarem para a fila. Os limites de CPU, MEM
-e GPU para cada partição são apresentados na tabela abaixo.
+No cluster Apuana o Fairshare está implementado de forma simples, onde o
+cada orientador possui uma cota de recursos pré definida.
+Esta cota é dividida igualmente entre seus orientandos ativos que 
+estão associados a ele. Ou seja, Se os outros orientandos do seu professor não 
+estiverem usando o cluster, sua "fatia" disponível de rescursos será maior.
+
+QoS
+~~~~~~~~~~~~
+
+No Slurm, uma Qualidade de Serviço (QoS) é uma configuração que atribui 
+limites de recursos específicos, como tempo máximo de CPU, tempo de espera e memória 
+para trabalhos e controla sua prioridade de despacho em um cluster.
+Foram definidos 2 (dois) QoS principais para os usuários com as seguintes limitações:
+
++----------+----------+---------+----------+
+|   QoS    | Máx CPUs | Máx RAM | Máx GPUs |
++----------+----------+---------+----------+
+| simple   |    16    |  64GB   |     2    |
++----------+----------+---------+----------+
+| complex  |    48    |  500GB  |     4    |
++----------+----------+---------+----------+
+
+Partições
+~~~~~~~~~~~~
+
+Anteriormente, o cluster continha duas partições: long e short. A partição
+long era a partição padrão, adequada para processar cargas com poucos
+recursos em longos períodos de tempo. Já a partição short era adequada
+para processar cargas com mais recursos, porém, em um menor período de
+tempo. Um resumo destas informações, juntamente com seus recursos, é apresentado na tabela abaixo.
+
+.. A partição long roda jobs por até 7 dias, onde cada job sofre preempção,
+.. se houver jobs na fila, a partir de 2 dias. A partição short roda jobs
+.. por até 2 dias, onde cada job sofre preempção, se houve jobs na fila, a
+.. partir de 2 horas de execução do job. A preempção é uma suspensão
+.. temporária que força jobs a voltarem para a fila. Os limites de CPU, MEM
+.. e GPU para cada partição são apresentados na tabela abaixo.
 
 +-------+--------------+---------------------------------+-----+-----+-----+------------+
 | Nome  | Tempo máximo | Preempção                       | CPU | MEM | GPU | Prioridade |
@@ -325,21 +353,74 @@ e GPU para cada partição são apresentados na tabela abaixo.
 | short | 2 dias       | A partir de 2 horas de execução | 32  | 64  | 2   | 50         |
 +-------+--------------+---------------------------------+-----+-----+-----+------------+
 
-Para rodar um script em uma determinada partição:
+O cluster foi atualizado e possui agora sete partições: ``emergency``, ``install``, 
+``debug``, ``short-simple``, ``short-complex``, ``long-simple``, ``long-complex``. Isso foi realizado 
+para deixar mais específico o propósito de cada job, e as únicas partições que 
+aceitam execução de forma interativa são as ``install`` e ``debug``.
 
-sbatch -p nome_particao –cpus-per-task n_cpus --mem=memoria
---gpus=n_gpus script.sh
++---------------+-------------+---------------------+-----------------+------------+----------------+
+|    Partição   | Interativa  |       Recursos      | Máximo de tempo | Prioridade | Máximo de jobs |
++---------------+-------------+---------------------+-----------------+------------+----------------+
+|   emergency   |      ❌     | Completo (override) |      1 dia      |    1000    |       N/A      |
++---------------+-------------+---------------------+-----------------+------------+----------------+
+|    install    |      ✅     |      Meio node      |     30 mins     |     100    |        1       |
++---------------+-------------+---------------------+-----------------+------------+----------------+
+|     debug     |      ✅     |    Completo node    |     30 mins     |     10     |        1       |
++---------------+-------------+---------------------+-----------------+------------+----------------+
+|  short-simple |      ❌     |      Meio node      |      2 dias     |     100    |        4       |
++---------------+-------------+---------------------+-----------------+------------+----------------+
+| short-complex |      ❌     |    Completo node    |      2 dias     |     50     |        1       |
++---------------+-------------+---------------------+-----------------+------------+----------------+
+|  long-simple  |      ❌     |      Meio node      |      7 dias     |     50     |        4       |
++---------------+-------------+---------------------+-----------------+------------+----------------+
+|  long-complex |      ❌     |    Completo node    |      7 dias     |     25     |        1       |
++---------------+-------------+---------------------+-----------------+------------+----------------+
 
-Também é possível ajustar os limites de recursos no cabeçalho do
-script.sh:
+
+.. Para rodar um script em uma determinada partição:
+
+.. sbatch -p nome_particao –cpus-per-task n_cpus --mem=memoria
+.. --gpus=n_gpus script.sh
+
+.. Também é possível ajustar os limites de recursos no cabeçalho do
+.. script.sh:
+
+.. .. code-block:: console
+
+..  #!/bin/sh                                                             
+..  #SBATCH --cpus-per-task=n_cpus                                                                                                 
+..  #SBATCH --gpus=n_gpus                                                                                                                
+..  #SBATCH --mem=memoria                                                 
+
+
+⚠️ Atualização de scripts!
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Com as atualizações realizadas no cluster, o padrão dos scripts foi modificado.
+O template padrão para execução de jobs via sbatch é:
 
 .. code-block:: console
 
- #!/bin/sh                                                             
- #SBATCH --cpus-per-task=n_cpus                                                                                                 
- #SBATCH --gpus=n_gpus                                                                                                                
- #SBATCH --mem=memoria                                                 
+	#!/bin/bash
+	#SBATCH --mem 2G
+	#SBATCH -c 1
+	#SBATCH -p short-complex
+	#SBATCH --gpus=1
+	#SBATCH --mail-type=FAIL,END
+	#SBATCH --mail-user=user@cin.ufpe.br
 
+	ENV_NAME=$1
+	module load Python3.10 Xvfb freeglut glew
+	python -m venv $HOME/doc/$ENV_NAME
+	source $HOME/doc/$ENV_NAME/bin/activate
+	which python
+	pip install -r ../requirements.txt
+	pip list
+
+Já para a partição interativa, pode ser utilizado o comando:
+
+.. code-block:: console
+
+	salloc --mem 64G -c 48 --gpus 1
 
 .. _h.isb7a7i9a70r:
 
@@ -348,18 +429,28 @@ script.sh:
 Políticas de priorização de jobs
 -----------------------------------------------------
 
-Cada partição possui um fator de prioridade. A partição long
-(prioridade=100) possui prioridade maior que a partição short
-(prioridade=50). Além disto, como a quantidade de recursos pode variar
-em cada job, considera-se o fator JobSize. Este fator prioriza jobs que
-solicitam menos recursos computacionais. Considere dois usuários que
-submetem jobs utilizando a partição 'long'. O usuário A solicita X de
-CPU e o usuário B solicita 2X de CPU. O usuário A, possui maior
-prioridade
+.. Cada partição possui um fator de prioridade. As partições long
+.. (prioridade=100) possui prioridade maior que as partições short
+.. (prioridade=50). Além disto, como a quantidade de recursos pode variar
+.. em cada job, considera-se o fator JobSize. Este fator prioriza jobs que
+.. solicitam menos recursos computacionais. Considere dois usuários que
+.. submetem jobs utilizando a partição 'long'. O usuário A solicita X de
+.. CPU e o usuário B solicita 2X de CPU. O usuário A, possui maior
+.. prioridade
 
-Portanto, para cada job é calculado um fator de prioridade de acordo com
-a partição e recursos solicitados. Este fator de prioridade varia de 0.0
-à 1.0. Por enquanto, considera-se dois fatores: Partition e JobSize.
-Estes fatores possuem pesos iguais.
+.. Portanto, para cada job é calculado um fator de prioridade de acordo com
+.. a partição e recursos solicitados. Este fator de prioridade varia de 0.0
+.. a 1.0. Por enquanto, considera-se dois fatores: Partition e JobSize.
+.. Estes fatores possuem pesos iguais.
 
- 
+Cada partição possui um fator de prioridade. A partição que pode ser utilizada
+para submissão de job com maior prioridade é a **``short-simple``** (prioridade=100)
+enquanto a que possui menor prioridade é a **long-complex** (prioridade=25). 
+Além disso, como a quantidade de recursos pode variar em cada job, considera-se 
+o fator **JobSize**. Este fator prioriza jobs que solicitam menos recursos computacionais.
+
+Considere dois usuários que submetem jobs utilizando a partição 'long-complex'.
+O usuário A solicita X de CPU e o usuário B solicita 2X de CPU. O usuário A, 
+possui maior prioridade. Portanto, para cada job é calculado um fator de 
+prioridade  de acordo com a partição e recursos solicitados. 
+Este fator de prioridade varia de 0.0 a 1.0.
