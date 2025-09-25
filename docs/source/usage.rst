@@ -454,3 +454,66 @@ O usuário A solicita X de CPU e o usuário B solicita 2X de CPU. O usuário A,
 possui maior prioridade. Portanto, para cada job é calculado um fator de 
 prioridade  de acordo com a partição e recursos solicitados. 
 Este fator de prioridade varia de 0.0 a 1.0.
+
+.. FAQ
+.. -----------------------------------------------------
+.. **1. Entrei na lista de usuários, e agora?**
+
+.. - Siga os passos abaixo para começar a utilizar o cluster:
+
+..     - Conecte-se à VPN da UFPE para acessar os recursos do cluster. Consulte as instruções em https://helpdesk.cin.ufpe.br/servicos/conectividade/vpn.
+
+..     - Acesse o nó de login: `$ssh [SEU-LOGIN-AQUI]@slurm-client1.cin.ufpe.br`
+
+..     - Crie um script executável (por exemplo, `meu_job.sh`).
+
+..     - Submeta seu job ao Slurm: `$sbatch --partition=short --mem=2G --gpus=0 --cpus-per-task 1 meu_job.sh`
+
+.. **2. Não consigo lançar meu Slurm-job. O que eu faço?**
+
+.. - Verifique se você está no nó de login.
+
+.. - Consulte o erro e procure por soluções em https://google.com ou https://chat.openai.com/. Este cluster é gerenciado por estudantes, e a verificação de e-mails não é frequente.
+
+.. - Se o erro incluir algo como:
+..   ```shell
+..   sbatch: error: QOSMaxCpuPerJobLimit # Pode ser QOSMaxMemoryPerJobLimit
+
+..   sbatch: error: Batch job submission failed: Job violates accounting/QOS policy (job submit limit, user's size and/or time limits)
+..   ```
+..   Isso indica que você está tentando alocar recursos além do esperado. Tente reduzir alguns recursos ou entre em contato conosco para análise.
+
+.. **3. Realizei todo o processo de entrar em um nó de computação, mas não consigo carregar meu módulo de desenvolvimento (modulefile). E agora?**
+
+.. - Verifique se você está realmente em um nó de computação e não no nó de login.
+
+.. - Confira se o seu módulo está instalado:
+..     - Às vezes, instalamos o módulo, mas esquecemos de deixá-lo disponível no `MODULEPATH` estabelecido.
+..     - Se não encontrar o módulo usando `$module avail`:
+..         - Execute os seguintes comandos:
+..         ```shell
+..         $module use /opt/easybuild/modules/all/
+..         $module avail
+..         ```
+..         - Entre em contato conosco para garantir a disponibilidade do módulo, seja instalando-o ou utilizando o caminho "/opt/easybuild/modules/all/" para carregá-lo.
+
+.. **4. Como posso monitorar o progresso do meu job no cluster?**
+
+.. - Utilize o comando `squeue` para verificar o status dos jobs em execução no cluster.
+
+.. **5. O que fazer se o meu job está demorando mais do que o esperado para iniciar?**
+
+.. - Verifique a fila de jobs (`squeue`) para ver se há algum atraso ou se a fila está muito ocupada. Caso necessário, ajuste as configurações do seu job para uma fila menos congestionada.
+
+.. **6. Como faço para transferir arquivos para e do cluster?**
+
+.. - Use o comando `scp` para transferir arquivos entre o seu computador local e o cluster. Exemplo: `$scp arquivo.txt [SEU-LOGIN-AQUI]@slurm-client1.cin.ufpe.br:/caminho/destino/`.
+
+.. **7. O cluster suporta GPUs? Como faço para usar GPUs nos meus jobs?**
+
+.. - Certifique-se de incluir a opção `--gpus` no seu comando `sbatch` para solicitar o número desejado de GPUs. Consulte a documentação do cluster para obter mais detalhes sobre a configuração de jobs com GPUs.
+
+
+.. **9. O que fazer se eu esquecer minha senha ou encontrar problemas de autenticação?**
+
+.. - Entre em contato com a equipe de suporte do CIn (helpdesk@cin.ufpe.br).
