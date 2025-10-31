@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Visão Geral &#8212; Documentação Cluster Cin latest</title>
+    <title>&lt;no title&gt; &#8212; Documentação Cluster Cin latest</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/groundwork.css?v=594d7a89" />
     <script src="../_static/documentation_options.js?v=3ccd3dfb"></script>
@@ -22,7 +22,7 @@
           <a href="../genindex.html" title="Índice Geral"
              accesskey="I">índice</a></li>
         <li class="nav-item nav-item-0"><a href="../index.html">Documentação Cluster Cin latest</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Visão Geral</a></li> 
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
       </ul>
     </div>  
 
@@ -31,78 +31,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="visao-geral">
-<h1>Visão Geral<a class="headerlink" href="#visao-geral" title="Link para este cabeçalho">¶</a></h1>
-<section id="o-que-e-singularidade">
-<h2>O que é singularidade<a class="headerlink" href="#o-que-e-singularidade" title="Link para este cabeçalho">¶</a></h2>
-<p>Executar o Docker no SLURM é um problema de segurança (por exemplo, executando como root,
-tendo a capacidade de montar qualquer diretório). A alternativa é usar o Singularity,
-que é uma solução popular no mundo de HPC.</p>
-<p>Existe um bom nível de compatibilidade entre Docker e Singularity, e podemos encontrar
-muitas alegações exageradas sobre a capacidade de converter contêineres do Docker para
-Singularity sem qualquer atrito. Muitas vezes, imagens do DockerHub são 100% compatíveis
-com o Singularity e podem ser usadas sem atrito, mas as coisas ficam complicadas quando
-tentamos converter nossos próprios arquivos de construção do Docker em receitas do Singularity.</p>
-</section>
-<section id="links-para-documentacao-oficial">
-<h2>Links para documentação oficial<a class="headerlink" href="#links-para-documentacao-oficial" title="Link para este cabeçalho">¶</a></h2>
-<ul class="simple">
-<li><p>official <a class="reference external" href="https://singularity-docs.readthedocs.io/en/latest/">Singularity user guide</a></p></li>
-<li><p>official <a class="reference external" href="https://sylabs.io/guides/latest/admin-guide/">Singularity admin guide</a></p></li>
-</ul>
-</section>
-<section id="visao-gerald-dos-passos-usados-na-pratica">
-<h2>Visão gerald dos passos usados na prática<a class="headerlink" href="#visao-gerald-dos-passos-usados-na-pratica" title="Link para este cabeçalho">¶</a></h2>
-<p>Na maioria das vezes, o processo para criar e usar um contêiner Singularity é:</p>
-<ul class="simple">
-<li><p>No seu computador Linux (em casa ou no trabalho)</p>
-<ul>
-<li><p>selecione uma imagem Docker do DockerHub (por exemplo, <em>pytorch/pytorch</em>)</p></li>
-<li><p>crie um arquivo de receita para o Singularity que comece com essa imagem do DockerHub</p></li>
-<li><p>construa o arquivo de receita, criando assim o arquivo de imagem (por exemplo, <code class="docutils literal notranslate"><span class="pre">my-pytorch-image.sif</span></code>)</p></li>
-<li><p>teste seu contêiner Singularity antes de enviá-lo para o cluster</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">rsync</span> <span class="pre">-av</span> <span class="pre">my-pytorch-image.sif</span> <span class="pre">&lt;login-node&gt;:Documents/my-singularity-images</span></code></p></li>
-</ul>
-</li>
-<li><p>No nó de login desse cluster</p>
-<ul>
-<li><p>enfileire seus trabalhos com <code class="docutils literal notranslate"><span class="pre">sbatch</span> <span class="pre">...</span></code></p></li>
-<li><p>(observe que seus trabalhos copiarão o arquivo <code class="docutils literal notranslate"><span class="pre">my-pytorch-image.sif</span></code> para $SLURM_TMPDIR e então iniciarão o Singularity com essa imagem)
-faça outra coisa enquanto espera que eles terminem</p></li>
-<li><p>enfileire mais trabalhos com o mesmo <code class="docutils literal notranslate"><span class="pre">my-pytorch-image.sif</span></code>, reutilizando-o várias vezes</p></li>
-</ul>
-</li>
-</ul>
-<p>Nas próximas seções, você encontrará exemplos específicos ou dicas para realizar na prática as etapas destacadas acima.</p>
-</section>
-<section id="nao-nao-no-macos">
-<h2>Não, não no MacOS<a class="headerlink" href="#nao-nao-no-macos" title="Link para este cabeçalho">¶</a></h2>
-<p>Singularity não funciona no MacOS, até a data desta escrita em 2021.
-Docker realmente não roda no MacOS, mas o Docker instala silenciosamente uma
-máquina virtual executando Linux, o que torna a experiência agradável,
-e o usuário não precisa se preocupar com os detalhes de como o Docker faz isso.</p>
-<p>Dado sua origem em HPC, o Singularity não fornece esse tipo de experiência sem problemas no MacOS,
-embora tecnicamente seja possível executá-lo dentro de uma máquina virtual Linux no MacOS.</p>
-</section>
-<section id="onde-construir-imagens">
-<h2>Onde construir imagens<a class="headerlink" href="#onde-construir-imagens" title="Link para este cabeçalho">¶</a></h2>
-<p>Construir imagens do Singularity é uma tarefa bastante pesada, que pode levar 20 minutos
-se você tiver muitas etapas na sua receita. Isso torna uma tarefa ruim para rodar em
-os nós de login de nossos clusters, especialmente se precisar ser executado regularmente.</p>
-<p>No cluster Mila, temos a sorte de ter acesso irrestrito à internet nos nós de computação,
-o que significa que qualquer pessoa pode solicitar um nó de CPU interativo (sem necessidade de GPU)
-e construir suas imagens lá sem problemas.</p>
-<div class="admonition warning">
-<p class="admonition-title">Aviso</p>
-<p>Não construa imagens do Singularity do zero toda vez que executar um
-trabalho em um grande lote. Isso será um desperdício colossal de tempo de GPU e também de
-largura de banda da internet. Se você configurar seu fluxo de trabalho corretamente
-(por exemplo, usando caminhos de ligação para o seu código e dados), você pode passar meses reutilizando a mesma
-imagem do Singularity <code class="docutils literal notranslate"><span class="pre">my-pytorch-image.sif</span></code>.</p>
-</div>
-</section>
-</section>
-
+  
 
             <div class="clearer"></div>
           </div>
@@ -113,20 +42,6 @@ imagem do Singularity <code class="docutils literal notranslate"><span class="pr
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/cin-logo.png" alt="Logo de Cluster Cin"/>
             </a></p>
-  <div>
-    <h3><a href="../index.html">Tabela de Conteúdo</a></h3>
-    <ul>
-<li><a class="reference internal" href="#">Visão Geral</a><ul>
-<li><a class="reference internal" href="#o-que-e-singularidade">O que é singularidade</a></li>
-<li><a class="reference internal" href="#links-para-documentacao-oficial">Links para documentação oficial</a></li>
-<li><a class="reference internal" href="#visao-gerald-dos-passos-usados-na-pratica">Visão gerald dos passos usados na prática</a></li>
-<li><a class="reference internal" href="#nao-nao-no-macos">Não, não no MacOS</a></li>
-<li><a class="reference internal" href="#onde-construir-imagens">Onde construir imagens</a></li>
-</ul>
-</li>
-</ul>
-
-  </div>
   <div role="note" aria-label="source link">
     <h3>Essa Página</h3>
     <ul class="this-page-menu">
@@ -155,7 +70,7 @@ imagem do Singularity <code class="docutils literal notranslate"><span class="pr
           <a href="../genindex.html" title="Índice Geral"
              >índice</a></li>
         <li class="nav-item nav-item-0"><a href="../index.html">Documentação Cluster Cin latest</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Visão Geral</a></li> 
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
